@@ -1,0 +1,46 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed and saved.
+ *
+ * Add your own CSS or Less to fully customize Atom.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
+ */
+
+
+/*
+ * Examples
+ * (To see them, uncomment and save)
+ */
+
+// style the background color of the tree view
+.tree-view {
+  // background-color: whitesmoke;
+}
+
+// style the background and foreground colors on the atom-text-editor-element itself
+atom-text-editor {
+  // color: white;
+  // background-color: hsl(180, 24%, 12%);
+}
+
+// To style other content in the text editor's shadow DOM, use the ::shadow expression
+atom-text-editor::shadow .cursor {
+  // border-color: red;
+}
+
+//Find and replace to black
+.project-find atom-text-editor[mini], .find-and-replace atom-text-editor[mini], .project-find atom-text-editor[mini]::shadow, .find-and-replace atom-text-editor[mini]::shadow {
+  background: #000;
+}
+
+.project-find atom-text-editor[mini] .text.plain, .find-and-replace atom-text-editor[mini] .text.plain, .project-find atom-text-editor[mini]::shadow .text.plain, .find-and-replace atom-text-editor[mini]::shadow .text.plain {
+  color: #eee;
+}
+
+.project-find .btn-group-replace-all .btn, .find-and-replace .btn-group-replace-all .btn {
+    background: #732326;
+    color: #d4d7d6;
+}

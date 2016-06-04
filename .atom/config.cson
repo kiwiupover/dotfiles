@@ -1,0 +1,40 @@
+"*":
+  "atom-beautify":
+    _analyticsUserId: "b4cce769-fa40-4ac3-83ba-2eace21f98c5"
+    general:
+      _analyticsUserId: "3bb9cd0d-cc3e-4c50-9c4c-3fc074fcb884"
+  autosave:
+    enabled: true
+  core:
+    disabledPackages: [
+      "ember-cli-helper"
+    ]
+    packagesWithKeymapsDisabled: []
+    themes: [
+      "seti-ui"
+      "seti-syntax"
+    ]
+  editor:
+    fontFamily: "Bitstream Vera Sans Mono"
+    invisibles: {}
+  "ember-cli-helper":
+    pathToEmberExecutable: "/Users/dlaird/.nvm/versions/node/v0.12.7/bin/ember"
+    pathToNodeExecutable: "/Users/dlaird/.nvm/versions/node/v0.12.7/bin/node"
+  emmet: {}
+  "exception-reporting":
+    userId: "3e75f205-6d54-34ad-0e6a-3c0a8c43a74e"
+  "language-babel": {}
+  "seti-syntax":
+    themeColor: "Yellow"
+  "seti-ui":
+    compactView: true
+  "spell-check":
+    grammars: [
+      "source.js"
+      "source.hbs"
+      "source.json"
+      "text.html.basic"
+      "source.js.jsx"
+    ]
+  welcome:
+    showOnStartup: false
