@@ -31,6 +31,10 @@
     'prefix': 'clog'
     'body': "console.log('$1', $1);"
 
+  'console log statment':
+    'prefix': 'clogg'
+    'body': "console.log('$1');"
+
   'andThen':
     'prefix': 'athen'
     'body': 'andThen( ()=> {\n' +
