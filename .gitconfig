@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
   name = Dave Laird
-  email = kiwiupover@gmail.com
+	useConfigOnly = true
 [branch]
   autosetuprebase = always
 [color]
@@ -54,7 +54,7 @@
 
 [core]
   editor = atom -n -w
-  excludesfile = .gitignore_global
+	excludesfile = /Users/lairddav/.gitignore_global
 [push]
   default = current
 [mergetool "diffmerge"]

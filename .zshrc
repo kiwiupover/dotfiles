@@ -58,6 +58,10 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
+# using http://direnv.net/ for multiple git users
+# brew install direnv
+eval "$(direnv hook zsh)"
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -115,6 +119,8 @@ alias pgs='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.l
 alias pgstop='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
 
 # git alias files
+alias gsettwitchuser='git config user.email "lairddav@justin.tv" && git config user.name "Dave Laird"'
+alias gsetuser='git config user.email "kiwiupover@gmail.com" && git config user.name "Dave Laird"'
 alias gco='git checkout'
 alias gcb='git checkout -b'
 alias gpr='git pull --rebase'
@@ -134,6 +140,7 @@ alias gl='git smart-log'
 alias gap='git add -p'
 alias gcp='git commit -p'
 alias gll='git pull -p'
+alias gre='git recent' #depends on https://github.com/paulirish/git-recent
 
 alias gbsort="git for-each-ref --sort=-committerdate --format='%1B[32m%(committerdate:iso8601) %1B[34m%(committerdate:relative) %1B[0;m%(refname:short)' refs/heads/"
 
@@ -237,3 +244,9 @@ function npm-bower-install() {
   bower install
   npm set progress=true
 }
+
+# export PATH="$PATH:$HOME/.rv/bin" # Add RVM to PATH for scripting
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$PATH:$HOME/.yarn/bin"
+eval "$(rbenv init -)"
+export PATH="$PATH:$HOME/.webdriver"
