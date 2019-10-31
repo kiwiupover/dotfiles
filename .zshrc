@@ -49,7 +49,7 @@ ZSH_THEME="muse"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew gem atom sublime)
+plugins=(git brew gem battery)
 
 # User configuration
 
@@ -60,7 +60,7 @@ source $ZSH/oh-my-zsh.sh
 
 # using http://direnv.net/ for multiple git users
 # brew install direnv
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -84,8 +84,9 @@ eval "$(direnv hook zsh)"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="atom ~/.zshrc"
-alias ohmyzsh="atom ~/.oh-my-zsh"
+alias zshconfig="code ~/.zshrc"
+alias ohmyzsh="code ~/.oh-my-zsh"
+alias gitcongif="code ~/.gitconfig"
 
 export MONGO_PATH=/usr/local/mongodb
 export PATH=$PATH:$MONGO_PATH/bin
@@ -94,7 +95,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 
-export GEM_EDITOR='atom'
+export GEM_EDITOR='code'
 
 c() { cd ~/code/$1; }
 
@@ -110,6 +111,10 @@ compdef _p p
 alias crc='cd ~/code/client'
 alias crs='cd ~/code/server && nvm use'
 alias crm='cd ~/code/mock-api'
+
+alias dd='cd ~/code/frontend/packages/outdoorsy-dashboard'
+alias ds='cd ~/code/frontend/packages/outdoorsy-search'
+alias dadmin='cd ~/code/frontend/packages/admin-portal'
 
 alias rs='rails s'
 alias rc='rails c'
@@ -146,11 +151,6 @@ alias gbsort="git for-each-ref --sort=-committerdate --format='%1B[32m%(committe
 
 alias redis='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist'
 
-alias zs="zeus start"
-alias z="zeus"
-alias zss="zeus s"
-alias zsd="zeus s -p 3500"
-
 alias bower='noglob bower'
 
 alias tc='top-commands'
@@ -169,15 +169,9 @@ alias testcc="ember t -s --launch Chrome\ Canary"
 alias testf="ember t -s --launch Firefox"
 alias testa="ember t -s"
 
-alias nvm10="nvm use 0.10"
-alias nvm12="nvm use 0.12"
-alias nvm4="nvm use 4"
-alias nvm5="nvm use 5"
-alias nvm6="nvm use 6"
-
 alias gdev="grunt dev"
 
-alias a='atom .'
+alias a='code .'
 
 alias dnsflush='sudo discoveryutil mdnsflushcache;sudo discoveryutil udnsflushcaches;say flushed'
 
@@ -250,3 +244,5 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$PATH:$HOME/.yarn/bin"
 eval "$(rbenv init -)"
 export PATH="$PATH:$HOME/.webdriver"
+export PATH="$PATH:$HOME/.volta"
+export PATH="/usr/local/opt/node@10/bin:$PATH"
