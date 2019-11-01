@@ -9,7 +9,7 @@ My dot and atom files
 
 ### Git
 ```
-brew install git yarn git-recent
+brew install git yarn git-recent rbenv
 ```
 
 ### NVM Node version manager

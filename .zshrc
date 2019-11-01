@@ -108,10 +108,6 @@ p() { cd ~/Projects/$1;  }
 _p() { _files -W ~/Projects -/; }
 compdef _p p
 
-alias crc='cd ~/code/client'
-alias crs='cd ~/code/server && nvm use'
-alias crm='cd ~/code/mock-api'
-
 alias dd='cd ~/code/frontend/packages/outdoorsy-dashboard'
 alias ds='cd ~/code/frontend/packages/outdoorsy-search'
 alias dadmin='cd ~/code/frontend/packages/admin-portal'
@@ -242,7 +238,6 @@ function npm-bower-install() {
 # export PATH="$PATH:$HOME/.rv/bin" # Add RVM to PATH for scripting
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$PATH:$HOME/.yarn/bin"
-eval "$(rbenv init -)"
 export PATH="$PATH:$HOME/.webdriver"
 export PATH="$PATH:$HOME/.volta"
 export PATH="/usr/local/opt/node@10/bin:$PATH"
