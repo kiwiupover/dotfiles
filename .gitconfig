@@ -56,8 +56,8 @@
   tool = diffmerge
 
 [core]
-  editor = atom -n -w
-	excludesfile = /Users/lairddav/.gitignore_global
+  editor = code -n -w
+	excludesfile = /Users/kiwi/.gitignore_global
 [push]
   default = current
 [mergetool "diffmerge"]
