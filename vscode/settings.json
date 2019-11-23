@@ -1,0 +1,23 @@
+{
+  "files.autoSave": "onFocusChange",
+  "editor.tabSize": 2,
+  "editor.fontSize": 14,
+  "editor.fontFamily": "'Bitstream Vera Sans Mono', monospace",
+  "atomKeymap.promptV3Features": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.formatOnPaste": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "files.exclude": {
+    "**/dist": true,
+    "**/tmp": true
+  },
+  "eslint.autoFixOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "window.zoomLevel": 0,
+  "editor.formatOnSave": false,
+  "prettier.singleQuote": true
+}

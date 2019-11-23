@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.atom-keybindings",
+			"lifeart.vscode-ember-unstable",
+			"msjsdiag.debugger-for-chrome",
+			"dbaeumer.vscode-eslint",
+			"aaron-bond.better-comments",
+			"esbenp.prettier-vscode",
+			"streetsidesoftware.code-spell-checker",
+			"apsislabs.mergetool-navigator",
+			"lifeart.vscode-glimmer-syntax",
+			"sysoev.vscode-open-in-github",
+			"ynotdraw.ember-concurrency-vscode-snippets"
+		]
+	}
+}

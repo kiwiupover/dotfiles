@@ -182,6 +182,8 @@ alias ..="cd ../ && ls -al"
 alias ...="cd ../../ && ls -al"
 alias ....="cd ../../../ && ls -al"
 
+alias lkd=npm-list-linked # depends on https://www.npmjs.com/package/npm-list-linked
+
 alias server="python -m SimpleHTTPServer 3456"
 
 function lc () {
@@ -241,3 +243,8 @@ export PATH="$PATH:$HOME/.yarn/bin"
 export PATH="$PATH:$HOME/.webdriver"
 export PATH="$PATH:$HOME/.volta"
 export PATH="/usr/local/opt/node@10/bin:$PATH"
+
+export VOLTA_HOME="$HOME/.volta"
+[ -s "$VOLTA_HOME/load.sh" ] && . "$VOLTA_HOME/load.sh"
+
+export PATH="$VOLTA_HOME/bin:$PATH"
