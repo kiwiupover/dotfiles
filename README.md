@@ -2,14 +2,39 @@
 My dot and atom files
 
 ## Install
+### iTerm
+https://www.iterm2.com/downloads.html
+
 ### HomeBrew
 ```sh 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
+### Dropbox
+https://www.dropbox.com/install
+
+### VSCode 
+https://code.visualstudio.com/download
+
+### Postico
+https://eggerapps.at/postico/
+
+
+
 ### Git
 ```
-brew install git yarn git-recent rbenv
+brew install git node yarn git-recent rbenv zsh
+
+```
+
+### Ohmyzsh
+```sh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+## Pull Configs
+```sh
+git clone https://github.com/kiwiupover/dotfiles.git
 ```
 
 ### NVM Node version manager
@@ -29,6 +54,9 @@ http://www.dafont.com/bitstream-vera-mono.font
 export GIT_AUTHOR_EMAIL=kiwiupover@gmail.com
 export GIT_COMMITTER_EMAIL=kiwiupover@gmail.com
 ```
+
+### Volta
+curl https://get.volta.sh | bash
 
 ## Symlink Files
 
