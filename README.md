@@ -48,12 +48,6 @@ yarn global add ember-cli bower
 ### Editor Font
 http://www.dafont.com/bitstream-vera-mono.font
 
-### direnv config
-.envrc in the root of the folder
-```js
-export GIT_AUTHOR_EMAIL=kiwiupover@gmail.com
-export GIT_COMMITTER_EMAIL=kiwiupover@gmail.com
-```
 
 ### Volta
 curl https://get.volta.sh | bash
