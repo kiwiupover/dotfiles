@@ -23,7 +23,7 @@ https://eggerapps.at/postico/
 
 ### Git
 ```
-brew install git node yarn git-recent rbenv zsh
+brew install git node yarn git-recent rbenv zsh direnv
 
 ```
 
@@ -37,25 +37,24 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 git clone https://github.com/kiwiupover/dotfiles.git
 ```
 
-### NVM Node version manager
-`curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash`
+### Volta
+curl https://get.volta.sh | bash
 
 Add node dependancies ember-cli and bower
 ```
-yarn global add ember-cli bower
+volta install ember-cli bower yarn
 ```
 
 ### Editor Font
 http://www.dafont.com/bitstream-vera-mono.font
 
 
-### Volta
-curl https://get.volta.sh | bash
-
 ## Symlink Files
 
 ```sh
 cd ~
+mkdir code
+mkdir projects
 ln -shi dotfiles/.gitconfig .gitconfig
 ln -shi dotfiles/.zshrc .zshrc
 ln -shi dotfiles/.gitignore_global .gitignore_global
