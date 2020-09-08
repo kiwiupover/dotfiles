@@ -6,14 +6,14 @@ My dot and atom files
 https://www.iterm2.com/downloads.html
 
 ### HomeBrew
-```sh 
+```sh
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 ### Dropbox
 https://www.dropbox.com/install
 
-### VSCode 
+### VSCode
 https://code.visualstudio.com/download
 
 ### Postico
@@ -23,7 +23,7 @@ https://eggerapps.at/postico/
 
 ### Git
 ```
-brew install git node yarn git-recent rbenv zsh
+brew install git node yarn git-recent rbenv zsh direnv
 
 ```
 
@@ -56,6 +56,8 @@ curl https://get.volta.sh | bash
 
 ```sh
 cd ~
+mkdir code
+mkdir projects
 ln -shi dotfiles/.gitconfig .gitconfig
 ln -shi dotfiles/.zshrc .zshrc
 ln -shi dotfiles/.gitignore_global .gitignore_global

@@ -1,23 +1,37 @@
 {
+  "workbench.colorTheme": "Dracula Pro (Van Helsing)",
+  "editor.fontFamily": "Bitstream Vera Sans Mono, Menlo, Monaco, 'Courier New', monospace",
   "files.autoSave": "onFocusChange",
   "editor.tabSize": 2,
   "editor.fontSize": 14,
-  "editor.fontFamily": "'Bitstream Vera Sans Mono', monospace",
+  "css.validate": false,
   "atomKeymap.promptV3Features": true,
   "editor.multiCursorModifier": "ctrlCmd",
-  "editor.formatOnPaste": true,
-  "[jsonc]": {
-    "editor.defaultFormatter": "HookyQR.beautify"
+  "[css]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint",
+    "editor.formatOnSave": false
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "files.exclude": {
-    "**/dist": true,
-    "**/tmp": true
+    "**/tmp/**": true,
+    "**/node_modules/**": true,
+    "**/dist/**": true,
   },
-  "eslint.autoFixOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+  "files.watcherExclude": {
+    "**/tmp/**": true,
+    "**/node_modules/**": true,
+    "**/dist/**": true,
   },
-  "window.zoomLevel": 0,
-  "editor.formatOnSave": false,
-  "prettier.singleQuote": true
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
 }
