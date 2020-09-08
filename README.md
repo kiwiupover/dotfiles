@@ -20,11 +20,17 @@ https://code.visualstudio.com/download
 https://eggerapps.at/postico/
 
 
-
 ### Git
 ```
-brew install git node yarn git-recent rbenv zsh direnv
+brew install git git-recent rbenv zsh direnv
+```
 
+### Volta
+curl https://get.volta.sh | bash
+
+Add node dependancies ember-cli and bower and yarn
+```
+volta install ember-cli bower yarn
 ```
 
 ### Ohmyzsh
@@ -35,14 +41,6 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 ## Pull Configs
 ```sh
 git clone https://github.com/kiwiupover/dotfiles.git
-```
-
-### Volta
-curl https://get.volta.sh | bash
-
-Add node dependancies ember-cli and bower
-```
-volta install ember-cli bower yarn
 ```
 
 ### Editor Font
