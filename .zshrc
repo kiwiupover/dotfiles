@@ -49,18 +49,19 @@ ZSH_THEME="muse"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew gem battery)
+plugins=(git brew gem)
 
 # User configuration
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
+ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
 
 # using http://direnv.net/ for multiple git users
 # brew install direnv
-# eval "$(direnv hook zsh)"
+eval "$(direnv hook zsh)"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
