@@ -1,5 +1,4 @@
 {
-  "workbench.colorTheme": "Dracula Pro (Van Helsing)",
   "editor.fontFamily": "Bitstream Vera Sans Mono, Menlo, Monaco, 'Courier New', monospace",
   "files.autoSave": "onFocusChange",
   "editor.tabSize": 2,
@@ -35,4 +34,7 @@
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "editor.minimap.enabled": false,
+  "workbench.colorTheme": "Dracula Pro (Van Helsing)",
+  "javascript.implicitProjectConfig.experimentalDecorators": true,
+
 }
