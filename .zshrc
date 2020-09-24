@@ -111,6 +111,9 @@ compdef _p p
 
 alias dd='cd ~/code/frontend/packages/outdoorsy-dashboard'
 alias ds='cd ~/code/frontend/packages/outdoorsy-search'
+alias dr='cd ~/code/frontend/packages/reserve'
+alias mc='cd ~/code/frontend/packages/marketplace-components'
+alias esd='cd ~/code/frontend/packages/ember-shared-data'
 alias dadmin='cd ~/code/frontend/packages/admin-portal'
 
 alias rs='rails s'
