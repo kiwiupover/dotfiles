@@ -1,8 +1,9 @@
 {
-  "editor.fontFamily": "Bitstream Vera Sans Mono, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'Dank Mono', Bitstream Vera Sans Mono, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": "'ss02'",
   "files.autoSave": "onFocusChange",
   "editor.tabSize": 2,
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "css.validate": false,
   "atomKeymap.promptV3Features": true,
   "editor.multiCursorModifier": "ctrlCmd",
@@ -21,11 +22,6 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "files.exclude": {
-    "**/tmp/**": true,
-    "**/node_modules/**": true,
-    "**/dist/**": true,
-  },
   "files.watcherExclude": {
     "**/tmp/**": true,
     "**/node_modules/**": true,
@@ -35,6 +31,34 @@
   "files.insertFinalNewline": true,
   "editor.minimap.enabled": false,
   "workbench.colorTheme": "Dracula Pro (Van Helsing)",
+  "workbench.iconTheme": "material-icon-theme",
   "javascript.implicitProjectConfig.experimentalDecorators": true,
+  "files.exclude": {
+    "**/tmp/**": true,
+    "USE_GITIGNORE": true
+  },
 
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.smoothScrolling": true,
+  "editor.snippetSuggestions": "top",
+  "editor.suggest.localityBonus": true,
+  "editor.wordBasedSuggestions": false,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.renderWhitespace": "boundary",
+  "files.defaultLanguage": "{activeEditorLanguage}",
+  "workbench.list.smoothScrolling": true,
+  "tabnine.experimentalAutoImports": true,
+  "search.exclude": {
+    "**/dist/**": true,
+    "**/yarn.lock": true
+  },
+  "window.zoomLevel": 0,
+  "editor.fontWeight": "Thin",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+    "*.tsx": "typescriptreact",
+    "*.jsx": "javascriptreact"
+  },
 }

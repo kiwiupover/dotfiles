@@ -109,12 +109,14 @@ p() { cd ~/Projects/$1;  }
 _p() { _files -W ~/Projects -/; }
 compdef _p p
 
+alias df='cd ~/code/frontend'
 alias dd='cd ~/code/frontend/packages/outdoorsy-dashboard'
 alias ds='cd ~/code/frontend/packages/outdoorsy-search'
 alias dr='cd ~/code/frontend/packages/reserve'
 alias mc='cd ~/code/frontend/packages/marketplace-components'
 alias esd='cd ~/code/frontend/packages/ember-shared-data'
 alias dadmin='cd ~/code/frontend/packages/admin-portal'
+alias odr='cd ~/code/outdoorsy-renter'
 
 alias rs='rails s'
 alias rc='rails c'
@@ -124,12 +126,10 @@ alias pgs='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.l
 alias pgstop='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
 
 # git alias files
-alias gsettwitchuser='git config user.email "lairddav@justin.tv" && git config user.name "Dave Laird"'
-alias gsetuser='git config user.email "kiwiupover@gmail.com" && git config user.name "Dave Laird"'
 alias gco='git checkout'
 alias gcb='git checkout -b'
 alias gpr='git pull --rebase'
-alias gst='git staus -s'
+alias gst='git status -s'
 alias gs='git status'
 
 alias gcm='git commit -m'
