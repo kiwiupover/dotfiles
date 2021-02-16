@@ -160,7 +160,7 @@ alias e='ember'
 alias es="ember server"
 alias eg='ember generate'
 alias edp="ember build --environment=production"
-alias eb='ember build -w --output-path="../server/dist"'
+alias ebuild='ember build -w --output-path="../server/dist"'
 
 alias testp="ember t -s --launch PhantomJS"
 alias testc="ember t -s --launch Chrome"
@@ -252,3 +252,9 @@ export VOLTA_HOME="$HOME/.volta"
 [ -s "$VOLTA_HOME/load.sh" ] && . "$VOLTA_HOME/load.sh"
 
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kiwi/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kiwi/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/kiwi/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kiwi/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

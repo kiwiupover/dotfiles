@@ -61,4 +61,7 @@
     "*.tsx": "typescriptreact",
     "*.jsx": "javascriptreact"
   },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }
