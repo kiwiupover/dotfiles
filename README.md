@@ -15,6 +15,7 @@ https://www.dropbox.com/install
 
 ### VSCode
 https://code.visualstudio.com/download
+Download and run vscode.
 
 ### Postico
 https://eggerapps.at/postico/
@@ -47,6 +48,8 @@ git clone https://github.com/kiwiupover/dotfiles.git
 
 ### Editor Font
 http://www.dafont.com/bitstream-vera-mono.font
+
+https://www.dropbox.com/home/DankMono
 
 
 ## Symlink Files
