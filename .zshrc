@@ -1,30 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="muse"
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
@@ -36,14 +13,6 @@ COMPLETION_WAITING_DOTS="true"
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -83,7 +52,7 @@ eval "$(direnv hook zsh)"
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
+
 # Example aliases
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
@@ -105,7 +74,6 @@ compdef _c c
 
 p() { cd ~/Projects/$1;  }
 
-
 _p() { _files -W ~/Projects -/; }
 compdef _p p
 
@@ -118,6 +86,8 @@ alias pgstop='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/serve
 
 # git alias files
 alias gco='git checkout'
+alias gcom='git checkout develop'
+alias gcol='last-touched-branch'
 alias gcb='git checkout -b'
 alias gpr='git pull --rebase'
 alias gst='git status -s'
@@ -163,6 +133,9 @@ alias gdev="grunt dev"
 
 alias a='code .'
 
+alias ys='yarn start'
+alias yss='yarn start:staging'
+
 alias dnsflush='sudo discoveryutil mdnsflushcache;sudo discoveryutil udnsflushcaches;say flushed'
 
 alias bt='broccoli-taco'
@@ -201,7 +174,7 @@ function top-commands() {
 
 # List the most-frequently used non-Git commands
 function top-non-git() {
-  command-frequency | grep -v ' g ' | grep -v ' git ' | head -n 15
+  command-frequency | grep -v ' g' | grep -v ' git ' | grep -v ' a ' | head -n 15
 }
 
 function reinstall-npm-bower() {
@@ -225,7 +198,14 @@ function reinstall-npm-bower() {
 
 function use-git-commit() {
   echo $fg[green] "Use git commit -- dumb ass"
+  echo "\n\n\n"
   git commit
+}
+
+function last-touched-branch() {
+  BRANCH=$(git for-each-ref --count=1 --sort=-committerdate refs/heads/ --format='%(refname:short)')
+  echo "${BRANCH}"
+  git checkout "${BRANCH}"
 }
 
 function npm-bower-install() {
