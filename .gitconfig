@@ -67,3 +67,5 @@
   tool = diffmerge
 [difftool "diffmerge"]
   cmd = diffmerge $LOCAL $REMOTE
+[credential]
+	helper = manager

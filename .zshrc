@@ -27,10 +27,10 @@ ZSH_THEME="muse"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -49,7 +49,7 @@ ZSH_THEME="muse"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew gem)
+plugins=(git brew)
 
 # User configuration
 
@@ -109,18 +109,9 @@ p() { cd ~/Projects/$1;  }
 _p() { _files -W ~/Projects -/; }
 compdef _p p
 
-alias df='cd ~/code/frontend'
-alias dd='cd ~/code/frontend/packages/outdoorsy-dashboard'
-alias ds='cd ~/code/frontend/packages/outdoorsy-search'
-alias dr='cd ~/code/frontend/packages/reserve'
-alias mc='cd ~/code/frontend/packages/marketplace-components'
-alias esd='cd ~/code/frontend/packages/ember-shared-data'
-alias dadmin='cd ~/code/frontend/packages/admin-portal'
-alias odr='cd ~/code/outdoorsy-renter'
-
-alias rs='rails s'
-alias rc='rails c'
-alias rj='rake jobs:work'
+alias abc='cd ~/code/soxhub-client'
+alias aba='cd ~/code/soxhub-api'
+alias abl='cd ~/code/luna'
 
 alias pgs='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgstop='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
@@ -132,7 +123,7 @@ alias gpr='git pull --rebase'
 alias gst='git status -s'
 alias gs='git status'
 
-alias gcm='git commit -m'
+alias gcm='use-git-commit'
 alias gam='git commit -am'
 alias gcam='git commit --amend'
 alias gad='git add --all'
@@ -162,7 +153,6 @@ alias eg='ember generate'
 alias edp="ember build --environment=production"
 alias ebuild='ember build -w --output-path="../server/dist"'
 
-alias testp="ember t -s --launch PhantomJS"
 alias testc="ember t -s --launch Chrome"
 alias tests="ember t -s --launch Safari"
 alias testcc="ember t -s --launch Chrome\ Canary"
@@ -231,6 +221,11 @@ function reinstall-npm-bower() {
   else
     echo $fg[green] "Ok then!"
   fi
+}
+
+function use-git-commit() {
+  echo $fg[green] "Use git commit -- dumb ass"
+  git commit
 }
 
 function npm-bower-install() {
