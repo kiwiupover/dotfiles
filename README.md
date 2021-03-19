@@ -43,7 +43,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 ## Pull Configs
 ```sh
-git clone https://github.com/kiwiupover/dotfiles.git
+git clone git@github.com:kiwiupover/dotfiles.git
 ```
 
 ### Editor Font
