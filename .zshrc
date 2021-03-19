@@ -86,7 +86,8 @@ alias pgstop='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/serve
 
 # git alias files
 alias gco='git checkout'
-alias gcom='git checkout develop'
+alias gcom='git checkout main'
+alias gcod='git checkout develop'
 alias gcol='last-touched-branch'
 alias gcb='git checkout -b'
 alias gpr='git pull --rebase'
