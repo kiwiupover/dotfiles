@@ -1,3 +1,8 @@
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -93,6 +98,7 @@ alias gcb='git checkout -b'
 alias gpr='git pull --rebase'
 alias gst='git status -s'
 alias gs='git status'
+alias gchp='git cherry-pick'
 
 alias gcm='use-git-commit'
 alias gam='git commit -am'
@@ -234,3 +240,8 @@ if [ -f '/Users/kiwi/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/kiwi/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kiwi/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####

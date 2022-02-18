@@ -1,70 +1,85 @@
 {
-  "editor.fontFamily": "'Dank Mono', Bitstream Vera Sans Mono, Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontLigatures": "'ss02'",
-  "files.autoSave": "onFocusChange",
-  "editor.tabSize": 2,
-  "editor.fontSize": 15,
-  "css.validate": false,
-  "atomKeymap.promptV3Features": true,
-  "editor.multiCursorModifier": "ctrlCmd",
-  "[css]": {
-    "editor.defaultFormatter": "stylelint.vscode-stylelint",
-    "editor.formatOnSave": false
+  "atomKeymap.promptV3Features" : true,
+  "search.exclude" : {
+    "**\/yarn.lock" : true,
+    "**\/dist\/**" : true
   },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": false
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "files.watcherExclude": {
-    "**/tmp/**": true,
-    "**/node_modules/**": true,
-    "**/dist/**": true,
-  },
-  "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true,
-  "editor.minimap.enabled": false,
-  "workbench.colorTheme": "Dracula Pro (Van Helsing)",
-  "workbench.iconTheme": "material-icon-theme",
-  "javascript.implicitProjectConfig.experimentalDecorators": true,
-  "files.exclude": {
-    "**/tmp/**": true,
-    "USE_GITIGNORE": true
-  },
-
-  "editor.cursorSmoothCaretAnimation": true,
-  "editor.smoothScrolling": true,
-  "editor.snippetSuggestions": "top",
-  "editor.suggest.localityBonus": true,
-  "editor.wordBasedSuggestions": false,
-  "editor.acceptSuggestionOnCommitCharacter": false,
-  "editor.renderWhitespace": "boundary",
-  "files.defaultLanguage": "{activeEditorLanguage}",
-  "workbench.list.smoothScrolling": true,
-  "tabnine.experimentalAutoImports": true,
-  "search.exclude": {
-    "**/dist/**": true,
-    "**/yarn.lock": true
-  },
-  "window.zoomLevel": 0,
-  "editor.fontWeight": "Thin",
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "files.associations": {
-    "*.tsx": "typescriptreact",
-    "*.jsx": "javascriptreact"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "cSpell.userWords": [
+  "files.defaultLanguage" : "{activeEditorLanguage}",
+  "cSpell.userWords" : [
     "purgecss"
   ],
+  "files.autoSave" : "onFocusChange",
+  "editor.tabSize" : 2,
+  "[javascript]" : {
+    "editor.formatOnSave" : false,
+    "editor.defaultFormatter" : "vscode.typescript-language-features"
+  },
+  "[javascriptreact]" : {
+    "editor.defaultFormatter" : "esbenp.prettier-vscode"
+  },
+  "editor.accessibilitySupport" : "off",
+  "editor.cursorSmoothCaretAnimation" : true,
+  "vsintellicode.modify.editor.suggestSelection" : "automaticallyOverrodeDefaultValue",
+  "workbench.iconTheme" : "material-icon-theme",
+  "[json]" : {
+    "editor.formatOnSaveMode" : "modifications",
+    "editor.formatOnSave" : false,
+    "editor.defaultFormatter" : "esbenp.prettier-vscode"
+  },
+  "editor.renderWhitespace" : "boundary",
+  "editor.inlineSuggest.enabled" : true,
+  "[typescriptreact]" : {
+    "editor.defaultFormatter" : "esbenp.prettier-vscode"
+  },
+  "editor.suggest.localityBonus" : true,
+  "editor.multiCursorModifier" : "ctrlCmd",
+  "[handlebars]" : {
+    "editor.formatOnSave" : true,
+    "files.insertFinalNewline" : false,
+    "editor.defaultFormatter" : "esbenp.prettier-vscode"
+  },
+  "files.watcherExclude" : {
+    "**\/node_modules\/**" : true,
+    "**\/dist\/**" : true,
+    "**\/tmp\/**" : true
+  },
+  "files.trimTrailingWhitespace" : true,
+  "editor.defaultFormatter" : "esbenp.prettier-vscode",
+  "workbench.editorAssociations" : {
+    "*.ipynb" : "jupyter.notebook.ipynb"
+  },
+  "editor.suggestSelection" : "first",
+  "files.associations" : {
+    "*.tsx" : "typescriptreact",
+    "*.jsx" : "javascriptreact"
+  },
+  "editor.wordBasedSuggestions" : false,
+  "workbench.list.smoothScrolling" : true,
+  "editor.fontSize" : 15,
+  "js\/ts.implicitProjectConfig.experimentalDecorators" : true,
+  "editor.acceptSuggestionOnCommitCharacter" : false,
+  "css.validate" : false,
+  "files.insertFinalNewline" : true,
+  "editor.snippetSuggestions" : "top",
+  "editor.fontWeight" : "Thin",
+  "editor.fontLigatures" : "'ss02'",
+  "[css]" : {
+    "editor.formatOnSave" : true,
+    "files.insertFinalNewline" : false,
+    "editor.defaultFormatter" : "esbenp.prettier-vscode"
+  },
+  "editor.minimap.enabled" : false,
+  "files.exclude" : {
+    "**\/tmp\/**" : true,
+    "USE_GITIGNORE" : true
+  },
+  "editor.smoothScrolling" : true,
+  "editor.fontFamily": "'Dank Mono', Bitstream Vera Sans Mono, Menlo, Monaco, 'Courier New', monospace",
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "editor.largeFileOptimizations": false,
+  "bracket-pair-colorizer-2.depreciation-notice": false,
+  "json.maxItemsComputed": 20000,
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }
