@@ -170,6 +170,8 @@ alias tcg='top-non-git'
 
 alias npm-bower='reinstall-npm-bower'
 
+alias fast='networkQuality -v'
+
 function command-frequency() {
   tail -n 10000 ~/.zsh_history | cut -d ';' -f 2 | awk '{print $1 " " $2}' | sort | uniq -c | sort -rn
 }

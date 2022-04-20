@@ -81,5 +81,8 @@
   "editor.largeFileOptimizations": false,
   "bracket-pair-colorizer-2.depreciation-notice": false,
   "json.maxItemsComputed": 20000,
-  "javascript.updateImportsOnFileMove.enabled": "always"
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "gitlens.advanced.messages": {
+    "suppressGitDisabledWarning": true
+  }
 }
