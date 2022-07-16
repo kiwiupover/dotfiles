@@ -23,7 +23,7 @@ https://eggerapps.at/postico/
 
 ### Git
 ```
-brew install git git-recent rbenv zsh direnv
+brew install git git-recent rbenv zsh direnv gh
 ```
 
 ### Volta
