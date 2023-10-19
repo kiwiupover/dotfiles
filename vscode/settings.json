@@ -1,79 +1,56 @@
 {
-  "atomKeymap.promptV3Features" : true,
-  "search.exclude" : {
-    "**\/yarn.lock" : true,
-    "**\/dist\/**" : true
+  "atomKeymap.promptV3Features": true,
+  "search.exclude": {
+    "**/yarn.lock": true,
+    "**/dist/**": true,
+    "pmpn-lock.json": true
   },
-  "files.defaultLanguage" : "{activeEditorLanguage}",
-  "cSpell.userWords" : [
-    "purgecss"
-  ],
-  "files.autoSave" : "onFocusChange",
-  "editor.tabSize" : 2,
-  "[javascript]" : {
-    "editor.formatOnSave" : false,
-    "editor.defaultFormatter" : "vscode.typescript-language-features"
+  "files.defaultLanguage": "{activeEditorLanguage}",
+  "cSpell.userWords": ["purgecss"],
+  "files.autoSave": "onFocusChange",
+  "editor.tabSize": 2,
+  "editor.accessibilitySupport": "off",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.renderWhitespace": "boundary",
+  "editor.inlineSuggest.enabled": true,
+  "[css]": {
+    "files.insertFinalNewline": false
   },
-  "[javascriptreact]" : {
-    "editor.defaultFormatter" : "esbenp.prettier-vscode"
+  "[handlebars]": {
+    "files.insertFinalNewline": false
   },
-  "editor.accessibilitySupport" : "off",
-  "editor.cursorSmoothCaretAnimation" : true,
-  "vsintellicode.modify.editor.suggestSelection" : "automaticallyOverrodeDefaultValue",
-  "workbench.iconTheme" : "material-icon-theme",
-  "[json]" : {
-    "editor.formatOnSaveMode" : "modifications",
-    "editor.formatOnSave" : false,
-    "editor.defaultFormatter" : "esbenp.prettier-vscode"
+  "editor.suggest.localityBonus": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/dist/**": true,
+    "**/tmp/**": true
   },
-  "editor.renderWhitespace" : "boundary",
-  "editor.inlineSuggest.enabled" : true,
-  "[typescriptreact]" : {
-    "editor.defaultFormatter" : "esbenp.prettier-vscode"
+  "files.trimTrailingWhitespace": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.suggestSelection": "first",
+  "files.associations": {
+    "*.tsx": "typescriptreact",
+    "*.jsx": "javascriptreact"
   },
-  "editor.suggest.localityBonus" : true,
-  "editor.multiCursorModifier" : "ctrlCmd",
-  "[handlebars]" : {
-    "editor.formatOnSave" : true,
-    "files.insertFinalNewline" : false,
-    "editor.defaultFormatter" : "esbenp.prettier-vscode"
+  "editor.wordBasedSuggestions": false,
+  "workbench.list.smoothScrolling": true,
+  "editor.fontSize": 15,
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "css.validate": false,
+  "files.insertFinalNewline": true,
+  "editor.snippetSuggestions": "top",
+  "editor.fontWeight": "normal",
+  "editor.fontLigatures": "'ss02'",
+  "editor.minimap.enabled": false,
+  "files.exclude": {
+    "**/tmp/**": true,
+    "USE_GITIGNORE": true
   },
-  "files.watcherExclude" : {
-    "**\/node_modules\/**" : true,
-    "**\/dist\/**" : true,
-    "**\/tmp\/**" : true
-  },
-  "files.trimTrailingWhitespace" : true,
-  "editor.defaultFormatter" : "esbenp.prettier-vscode",
-  "workbench.editorAssociations" : {
-    "*.ipynb" : "jupyter.notebook.ipynb"
-  },
-  "editor.suggestSelection" : "first",
-  "files.associations" : {
-    "*.tsx" : "typescriptreact",
-    "*.jsx" : "javascriptreact"
-  },
-  "editor.wordBasedSuggestions" : false,
-  "workbench.list.smoothScrolling" : true,
-  "editor.fontSize" : 15,
-  "js\/ts.implicitProjectConfig.experimentalDecorators" : true,
-  "editor.acceptSuggestionOnCommitCharacter" : false,
-  "css.validate" : false,
-  "files.insertFinalNewline" : true,
-  "editor.snippetSuggestions" : "top",
-  "editor.fontWeight" : "Thin",
-  "editor.fontLigatures" : "'ss02'",
-  "[css]" : {
-    "editor.formatOnSave" : true,
-    "files.insertFinalNewline" : false,
-    "editor.defaultFormatter" : "esbenp.prettier-vscode"
-  },
-  "editor.minimap.enabled" : false,
-  "files.exclude" : {
-    "**\/tmp\/**" : true,
-    "USE_GITIGNORE" : true
-  },
-  "editor.smoothScrolling" : true,
+  "editor.smoothScrolling": true,
   "editor.fontFamily": "'Dank Mono', Bitstream Vera Sans Mono, Menlo, Monaco, 'Courier New', monospace",
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
@@ -82,7 +59,51 @@
   "bracket-pair-colorizer-2.depreciation-notice": false,
   "json.maxItemsComputed": 20000,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "redhat.telemetry.enabled": false,
+  "editor.formatOnSave": true,
+  "cSpell.languageSettings": [],
+  "eslint.format.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "gitlens.advanced.messages": {
-    "suppressGitDisabledWarning": true
-  }
+    "suppressGitDisabledWarning": true,
+    "suppressRebaseSwitchToTextWarning": true
+  },
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.editorAssociations": {
+    "git-rebase-todo": "default"
+  },
+  "[glimmer-js]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.foldingStrategy": "indentation"
+  },
+  "[glimmer-ts]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.foldingStrategy": "indentation"
+  },
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "markdown",
+    "glimmer-js",
+    "glimmer-ts"
+  ],
+  "eslint.validate": [
+    "glimmer-ts",
+    "glimmer-js"
+  ],
+  "eslint.rules.customizations": [
+    {
+      "rule": "*",
+      "severity": "warn"
+    }
+  ]
 }

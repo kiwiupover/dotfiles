@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "lifeart.vscode-ember-unstable",
+    "visualstudioexptteam.vscodeintellicode",
+    "bierner.markdown-preview-github-styles",
+    "typed-ember.glint-vscode",
+    "atomKeymap"
+  ],
+  "unwantedRecommendations": []
+}

@@ -1,4 +1,4 @@
-
+a
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the start of this file.
 [ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
@@ -82,9 +82,13 @@ p() { cd ~/Projects/$1;  }
 _p() { _files -W ~/Projects -/; }
 compdef _p p
 
-alias abc='cd ~/code/soxhub-client'
+alias abc='cd ~/code/auditboard-frontend'
 alias aba='cd ~/code/soxhub-api'
-alias abl='cd ~/code/luna'
+
+alias stb='cd ~/code/auditboard-frontend/apps/client && pp launch:build'
+alias sts='cd ~/code/auditboard-frontend/apps/client && pp launch:server'
+alias stt='cd ~/code/auditboard-frontend/apps/client && pp launch:tests'
+
 
 alias pgs='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgstop='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
@@ -143,6 +147,8 @@ alias a='code .'
 alias ys='yarn start'
 alias yss='yarn start:staging'
 
+alias pp='pnpm'
+
 alias dnsflush='sudo discoveryutil mdnsflushcache;sudo discoveryutil udnsflushcaches;say flushed'
 
 alias bt='broccoli-taco'
@@ -158,7 +164,7 @@ alias ....="cd ../../../ && ls -al"
 
 alias lkd=npm-list-linked # depends on https://www.npmjs.com/package/npm-list-linked
 
-alias server="python -m SimpleHTTPServer 3456"
+alias server="python3 -m http.server 3456"
 
 function lc () {
   cd $1;
@@ -219,7 +225,7 @@ function last-touched-branch() {
 
 function npm-bower-install() {
   echo $fg[green] "Installing NPM and Bower dependancies"
-  npm set progress=false
+  npm set progress=f
   npm install
   bower install
   npm set progress=true
@@ -247,3 +253,7 @@ if [ -f '/Users/kiwi/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 # Please make sure this block is at the end of this file.
 [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
 #### END FIG ENV VARIABLES ####
+
+# pnpm
+export VOLTA_FEATURE_PNPM=1
+# pnpm end
