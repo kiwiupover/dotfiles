@@ -96,10 +96,7 @@
     "glimmer-js",
     "glimmer-ts"
   ],
-  "eslint.validate": [
-    "glimmer-ts",
-    "glimmer-js"
-  ],
+  "eslint.validate": ["glimmer-ts", "glimmer-js"],
   "eslint.rules.customizations": [
     {
       "rule": "*",
