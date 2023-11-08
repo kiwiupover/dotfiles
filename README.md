@@ -31,9 +31,9 @@ brew install git git-recent rbenv zsh direnv
 curl https://get.volta.sh | bash
 ```
 
-Add node dependancies ember-cli and bower and yarn
+Add node dependencies ember-cli and yarn
 ```
-volta install ember-cli bower yarn
+volta install ember-cli yarn
 ```
 
 ### Ohmyzsh
