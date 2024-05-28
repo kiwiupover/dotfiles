@@ -57,7 +57,6 @@
 
 [core]
   editor = code -n -w
-	excludesfile = /Users/kiwi/.gitignore_global
 [push]
   default = current
 [mergetool "diffmerge"]

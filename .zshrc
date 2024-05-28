@@ -257,3 +257,10 @@ if [ -f '/Users/kiwi/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 # pnpm
 export VOLTA_FEATURE_PNPM=1
 # pnpm end
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+. "$HOME/.asdf/asdf.sh"
+. "$HOME/.asdf/completions/asdf.bash"
+. "$HOME/.asdf/asdf.sh"
+. "$HOME/.asdf/completions/asdf.bash"

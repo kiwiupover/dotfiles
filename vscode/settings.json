@@ -35,7 +35,7 @@
     "*.tsx": "typescriptreact",
     "*.jsx": "javascriptreact"
   },
-  "editor.wordBasedSuggestions": false,
+  "editor.wordBasedSuggestions": "off",
   "workbench.list.smoothScrolling": true,
   "editor.fontSize": 15,
   "js/ts.implicitProjectConfig.experimentalDecorators": true,
@@ -64,7 +64,7 @@
   "cSpell.languageSettings": [],
   "eslint.format.enable": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "gitlens.advanced.messages": {
     "suppressGitDisabledWarning": true,
@@ -96,11 +96,19 @@
     "glimmer-js",
     "glimmer-ts"
   ],
-  "eslint.validate": ["glimmer-ts", "glimmer-js"],
+  "eslint.validate": [
+    "glimmer-ts",
+    "glimmer-js"
+  ],
   "eslint.rules.customizations": [
     {
       "rule": "*",
       "severity": "warn"
     }
-  ]
+  ],
+  "prettier.documentSelectors": [
+    "**/*.gts",
+    "**/*.gjs"
+  ],
+  "github.copilot.editor.enableAutoCompletions": true
 }
