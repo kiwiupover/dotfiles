@@ -33,7 +33,8 @@ curl https://get.volta.sh | bash
 
 Add node dependancies ember-cli and bower and yarn
 ```
-volta install ember-cli bower yarn
+volta install node
+volta install ember-cli pnpm
 ```
 
 ### Ohmyzsh
