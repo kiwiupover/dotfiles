@@ -96,19 +96,16 @@
     "glimmer-js",
     "glimmer-ts"
   ],
-  "eslint.validate": [
-    "glimmer-ts",
-    "glimmer-js"
-  ],
+  "eslint.validate": ["glimmer-ts", "glimmer-js"],
   "eslint.rules.customizations": [
     {
       "rule": "*",
       "severity": "warn"
     }
   ],
-  "prettier.documentSelectors": [
-    "**/*.gts",
-    "**/*.gjs"
-  ],
-  "github.copilot.editor.enableAutoCompletions": true
+  "prettier.documentSelectors": ["**/*.gts", "**/*.gjs", ""],
+  "github.copilot.editor.enableAutoCompletions": true,
+  "explorer.confirmDragAndDrop": false,
+  "emmet.triggerExpansionOnTab": true,
+  "notebook.defaultFormatter": "esbenp.prettier-vscode"
 }

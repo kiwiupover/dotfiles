@@ -178,6 +178,8 @@ alias npm-bower='reinstall-npm-bower'
 
 alias fast='networkQuality -v'
 
+alias sb='supabase'
+
 function command-frequency() {
   tail -n 10000 ~/.zsh_history | cut -d ';' -f 2 | awk '{print $1 " " $2}' | sort | uniq -c | sort -rn
 }
@@ -258,9 +260,5 @@ if [ -f '/Users/kiwi/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 export VOLTA_FEATURE_PNPM=1
 # pnpm end
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-. "$HOME/.asdf/asdf.sh"
-. "$HOME/.asdf/completions/asdf.bash"
-. "$HOME/.asdf/asdf.sh"
-. "$HOME/.asdf/completions/asdf.bash"
+
+
