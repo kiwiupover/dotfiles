@@ -7,7 +7,7 @@
   },
   "files.defaultLanguage": "{activeEditorLanguage}",
   "cSpell.userWords": ["purgecss"],
-  "files.autoSave": "onFocusChange",
+  "files.autoSave": "onWindowChange",
   "editor.tabSize": 2,
   "editor.accessibilitySupport": "off",
   "editor.cursorSmoothCaretAnimation": "on",
@@ -96,7 +96,15 @@
     "glimmer-js",
     "glimmer-ts"
   ],
-  "eslint.validate": ["glimmer-ts", "glimmer-js"],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "svelte",
+    "glimmer-ts",
+    "glimmer-js"
+  ],
   "eslint.rules.customizations": [
     {
       "rule": "*",
@@ -107,5 +115,14 @@
   "github.copilot.editor.enableAutoCompletions": true,
   "explorer.confirmDragAndDrop": false,
   "emmet.triggerExpansionOnTab": true,
-  "notebook.defaultFormatter": "esbenp.prettier-vscode"
+  "notebook.defaultFormatter": "esbenp.prettier-vscode",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDelete": false,
+  "[html-eex]": {
+    "editor.defaultFormatter": "JakeBecker.elixir-ls"
+  },
+  "svelte.enable-ts-plugin": true,
+  "editor.codeActions.triggerOnFocusChange": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "baml.bamlPanelOpen": false
 }

@@ -62,6 +62,7 @@ eval "$(direnv hook zsh)"
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias gitcongif="code ~/.gitconfig"
+alias ws="open -a 'Windsurf - Next' ."
 
 export MONGO_PATH=/usr/local/mongodb
 export PATH=$PATH:$MONGO_PATH/bin
@@ -120,6 +121,11 @@ alias gll='git pull -p'
 alias gre='git recent' #depends on https://github.com/paulirish/git-recent
 
 alias gbsort="git for-each-ref --sort=-committerdate --format='%1B[32m%(committerdate:iso8601) %1B[34m%(committerdate:relative) %1B[0;m%(refname:short)' refs/heads/"
+
+alias mp='mix phx.server'
+alias mes='mix ecto.sync'
+alias mer='mix ecto.reset'
+alias mem='mix ecto.migrate'
 
 alias redis='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist'
 
@@ -245,11 +251,8 @@ export VOLTA_HOME="$HOME/.volta"
 
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/kiwi/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kiwi/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/kiwi/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kiwi/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH=~/.asdf/shims:$PATH
+export PATH="$HOME/.bun/bin:$PATH"
 
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the end of this file.
@@ -260,5 +263,47 @@ if [ -f '/Users/kiwi/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 export VOLTA_FEATURE_PNPM=1
 # pnpm end
 
+# GPG
+export GPG_TTY=$(tty)
 
+. "$HOME/.local/bin/env"
 
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/kiwi/.lmstudio/bin"
+
+# Added by Windsurf - Next
+export PATH="/Users/kiwi/.codeium/windsurf/bin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kiwi/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kiwi/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/kiwi/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kiwi/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# bun completions
+[ -s "/Users/kiwi/.bun/_bun" ] && source "/Users/kiwi/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# go
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:$HOME/go/bin"
+
+source <(gt completion zsh)
+export GOOGLE_APPLICATION_CREDENTIALS="/Users/kiwi/code/roamly-frontend/gcp-credentials.json"
+
+# --- Gas Town Integration (managed by gt) ---
+[[ -f "/Users/kiwi/.config/gastown/shell-hook.sh" ]] && source "/Users/kiwi/.config/gastown/shell-hook.sh"
+# --- End Gas Town ---
+# mise activation
+if command -v mise &> /dev/null; then
+    eval "$(mise activate zsh --shims)"
+    eval "$(mise activate zsh)"
+elif [ -f ~/.local/bin/mise ]; then
+    export PATH="$HOME/.local/bin:$PATH"
+    eval "$(~/.local/bin/mise activate zsh --shims)"
+    eval "$(~/.local/bin/mise activate zsh)"
+fi
