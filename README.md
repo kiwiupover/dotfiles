@@ -63,6 +63,7 @@ ln -shi dotfiles/.zshrc .zshrc
 ln -shi dotfiles/.gitignore_global .gitignore_global
 ln -shi dotfiles/.githelpers .githelpers
 ln -shi ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+ln -shi ~/dotfiles/ghostty/config ~/Library/Application\ Support/com.mitchellh.ghostty/config
 ln -Fshfiv ~/dotfiles/vscode/snippets/ ~/Library/Application\ Support/Code/User/snippets
 ```
 
