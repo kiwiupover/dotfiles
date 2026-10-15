@@ -109,3 +109,18 @@ Tracked in `herdr/`:
 `ghostty/config` unbinds `cmd+t` and `cmd+w` so those keys reach herdr.
 
 Left out on purpose: logs (`herdr-*.log`), sockets (`*.sock`), session state (`session.json`, `release-notes.json`, `.plugins.lock`), `plugins.json` (absolute paths, herdr regenerates it) and `plugins/config/` (per-plugin state dir).
+
+## Skills
+
+Agent skills live in `skills/`, and `link.sh` links each one into the agent that uses it:
+
+| Skill | Linked into |
+|---|---|
+| `blast-radius`, `bro`, `handoff`, `review-code` | `~/.claude/skills/` |
+| `/review-code` command (`claude/commands/review-code.md`) | `~/.claude/commands/` |
+| `unslop` | `~/.claude/skills/` and `~/.codex/skills/` |
+| `grilling`, `grill-me`, `domain-modeling` | `~/.codex/skills/` |
+
+`grilling`, `grill-me` and `domain-modeling` are adapted from [mattpocock/skills](https://github.com/mattpocock/skills) (MIT, see `skills/LICENSE-mattpocock-skills`).
+
+Not tracked: skills installed by a tool (`find-skills`, `herdr`, `hey`, `impeccable`), skills synced from claude.ai, and work-specific skills.

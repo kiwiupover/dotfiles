@@ -55,3 +55,17 @@ link vscode/snippets                  "$APP_SUPPORT/Code/User/snippets"
 link ghostty/config                   "$APP_SUPPORT/com.mitchellh.ghostty/config"
 link herdr/config.toml                "$HOME/.config/herdr/config.toml"
 link herdr/plugins/tab-close-confirm  "$HOME/.config/herdr/plugins/tab-close-confirm"
+
+# Claude Code skills
+link skills/blast-radius              "$HOME/.claude/skills/blast-radius"
+link skills/bro                       "$HOME/.claude/skills/bro"
+link skills/handoff                   "$HOME/.claude/skills/handoff"
+link skills/unslop                    "$HOME/.claude/skills/unslop"
+link skills/review-code               "$HOME/.claude/skills/review-code"
+link claude/commands/review-code.md   "$HOME/.claude/commands/review-code.md"
+
+# Codex skills
+link skills/unslop                    "$HOME/.codex/skills/unslop"
+link skills/grilling                  "$HOME/.codex/skills/grilling"
+link skills/grill-me                  "$HOME/.codex/skills/grill-me"
+link skills/domain-modeling           "$HOME/.codex/skills/domain-modeling"
