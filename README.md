@@ -116,7 +116,7 @@ Agent skills live in `skills/`, and `link.sh` links each one into the agent that
 
 | Skill | Linked into |
 |---|---|
-| `blast-radius`, `bro`, `handoff`, `review-code` | `~/.claude/skills/` |
+| `blast-radius`, `bro`, `handoff`, `review-code`, `python-code-review` | `~/.claude/skills/` |
 | `/review-code` command (`claude/commands/review-code.md`) | `~/.claude/commands/` |
 | `unslop` | `~/.claude/skills/` and `~/.codex/skills/` |
 | `grilling`, `grill-me`, `domain-modeling` | `~/.codex/skills/` |

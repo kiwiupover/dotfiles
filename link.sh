@@ -62,6 +62,7 @@ link skills/bro                       "$HOME/.claude/skills/bro"
 link skills/handoff                   "$HOME/.claude/skills/handoff"
 link skills/unslop                    "$HOME/.claude/skills/unslop"
 link skills/review-code               "$HOME/.claude/skills/review-code"
+link skills/python-code-review        "$HOME/.claude/skills/python-code-review"
 link claude/commands/review-code.md   "$HOME/.claude/commands/review-code.md"
 
 # Codex skills

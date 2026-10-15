@@ -1,0 +1,4 @@
+interface:
+  display_name: "Python Code Review"
+  short_description: "Four-agent Python review with security checks"
+  default_prompt: "Use $python-code-review to review the Python code I just wrote and consolidate actionable findings."
