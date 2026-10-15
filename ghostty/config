@@ -14,8 +14,6 @@ adjust-cell-height = 35%
 
 window-colorspace = "display-p3"
 
-copy-on-select = clipboard
-
 window-padding-balance = true
 
 window-save-state = always
