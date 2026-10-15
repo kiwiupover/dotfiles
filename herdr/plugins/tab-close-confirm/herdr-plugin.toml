@@ -1,0 +1,21 @@
+id = "tab-close-confirm"
+name = "Tab Close Confirmation"
+version = "0.1.0"
+description = "Ask for confirmation before closing any tab."
+min_herdr_version = "0.8.2"
+platforms = ["macos"]
+
+[[actions]]
+id = "close-tab"
+title = "Close tab"
+description = "Ask for confirmation before closing the active tab."
+contexts = ["workspace", "tab", "pane"]
+command = ["node", "scripts/close-tab.js"]
+
+[[panes]]
+id = "confirm"
+title = "Close tab?"
+placement = "popup"
+width = "60%"
+height = 14
+command = ["node", "scripts/confirm.js"]

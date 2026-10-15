@@ -22,6 +22,9 @@ window-save-state = always
 
 maximize = true
 
+keybind = super+t=unbind
+keybind = super+w=unbind
+
 
 # This is the configuration file for Ghostty.
 #

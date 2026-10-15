@@ -36,6 +36,13 @@ Add node dependancies ember-cli and bower and yarn
 volta install ember-cli bower yarn
 ```
 
+### herdr
+https://herdr.dev
+```sh
+curl -fsSL https://herdr.dev/install.sh | sh
+```
+Installs to `~/.local/bin/herdr`. Keep it current with `herdr update`.
+
 ### Ohmyzsh
 ```sh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -64,8 +71,20 @@ ln -shi dotfiles/.gitignore_global .gitignore_global
 ln -shi dotfiles/.githelpers .githelpers
 ln -shi ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 ln -shi ~/dotfiles/ghostty/config ~/Library/Application\ Support/com.mitchellh.ghostty/config
+ln -shi ~/dotfiles/herdr/config.toml ~/.config/herdr/config.toml
+ln -shi ~/dotfiles/herdr/plugins/tab-close-confirm ~/.config/herdr/plugins/tab-close-confirm
 ln -Fshfiv ~/dotfiles/vscode/snippets/ ~/Library/Application\ Support/Code/User/snippets
 ```
+
+## herdr
+
+Tracked in `herdr/`:
+- `config.toml`: keybindings, UI and theme. `cmd+w` and `prefix+shift+x` are bound to the plugin below instead of herdr's built-in `close_tab`.
+- `plugins/tab-close-confirm/`: a local plugin that asks for confirmation (Enter to close, Esc to cancel) before closing a tab. Needs `node`.
+
+Run `mkdir -p ~/.config/herdr/plugins` before symlinking on a new machine.
+
+Left out on purpose: logs (`herdr-*.log`), sockets (`*.sock`), session state (`session.json`, `release-notes.json`, `.plugins.lock`), `plugins.json` (absolute paths, herdr regenerates it) and `plugins/config/` (per-plugin state dir).
 
 ## iTerm2
 

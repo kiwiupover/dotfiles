@@ -1,0 +1,24 @@
+onboarding = false
+
+[keys]
+new_tab = ["prefix+c", "cmd+t"]
+close_tab = ""
+
+[[keys.command]]
+key = "prefix+shift+x"
+type = "shell"
+command = "herdr plugin action invoke close-tab --plugin tab-close-confirm"
+description = "close tab (confirm)"
+
+[[keys.command]]
+key = "cmd+w"
+type = "shell"
+command = "herdr plugin action invoke close-tab --plugin tab-close-confirm"
+description = "close tab (confirm)"
+
+[ui]
+status_indicators = "dots"
+
+[theme]
+name = "catppuccin"
+auto_switch = false
