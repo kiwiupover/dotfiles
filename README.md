@@ -58,6 +58,11 @@ The tab-close-confirm plugin needs `node` (from Volta, step 4).
 https://code.visualstudio.com/download
 Download and run vscode.
 
+#### Devin Next
+https://devin.ai/download (pick "Devin Next (Beta)")
+
+Then install the extensions (see [Devin Next](#devin-next) below).
+
 #### Dropbox
 https://www.dropbox.com/install
 
@@ -109,6 +114,23 @@ Tracked in `herdr/`:
 `ghostty/config` unbinds `cmd+t` and `cmd+w` so those keys reach herdr.
 
 Left out on purpose: logs (`herdr-*.log`), sockets (`*.sock`), session state (`session.json`, `release-notes.json`, `.plugins.lock`), `plugins.json` (absolute paths, herdr regenerates it) and `plugins/config/` (per-plugin state dir).
+
+## Devin Next
+
+Devin Next is built on VS Code, so it works the same way, but it keeps its own settings and extensions separate from VS Code's.
+
+Tracked in `devin/`:
+- `settings.json`: linked to `~/Library/Application Support/Devin - Next/User/settings.json`.
+- `extensions.txt`: installed extensions. Install them (safe to re-run, installed ones are skipped):
+  ```sh
+  DEVIN="/Applications/Devin - Next.app/Contents/Resources/app/bin/devin-desktop-next"
+  xargs -L1 "$DEVIN" --install-extension < ~/dotfiles/devin/extensions.txt
+  ```
+  After installing new ones, refresh the list with `"$DEVIN" --list-extensions > ~/dotfiles/devin/extensions.txt`.
+
+Kept out of `settings.json`: `devin.acp.agentPreferences` (it holds your Devin Cloud org ID, and this repo is public). If Devin writes it back, don't commit it.
+
+Not tracked: chat history, workspace state, and `globalStorage/agent-host-config.json` (the app rewrites it).
 
 ## Skills
 

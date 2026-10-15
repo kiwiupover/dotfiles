@@ -1,0 +1,88 @@
+{
+  "[glimmer-js]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.foldingStrategy": "indentation"
+  },
+  "[glimmer-ts]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.foldingStrategy": "indentation"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "svelte",
+    "glimmer-ts",
+    "glimmer-js"
+  ],
+  "prettier.documentSelectors": [
+    "**/*.gts",
+    "**/*.gjs"
+  ],
+  "files.autoSave": "onFocusChange",
+  "editor.minimap.enabled": false,
+  "[elixir]": {
+    "editor.defaultFormatter": "saratravi.elixir-formatter"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "diffEditor.renderSideBySide": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "svelte.enable-ts-plugin": true,
+  "editor.codeActions.triggerOnFocusChange": true,
+  "workbench.colorTheme": "Dark Modern",
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "tailwind-fold.autoFold": false,
+  "redhat.telemetry.enabled": true,
+  "editor.defaultFormatter": "svelte.svelte-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications",
+  "baml.bamlPanelOpen": false,
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "baml.featureFlags": [
+    "beta"
+  ],
+  "claudeCode.preferredLocation": "panel",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "devin.autocompleteSpeed": "fast",
+  "devin.autoExecutionPolicy": "off",
+  "devin.explainAndFixInCurrentConversation": true,
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml"
+  ],
+  "devin.acp.preferredAgent": "devin-cli",
+  "devin.acp.enabledAgents": {
+    "devin-cloud": true,
+    "devin-cli": true
+  }
+}
