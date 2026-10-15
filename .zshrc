@@ -62,7 +62,8 @@ eval "$(direnv hook zsh)"
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias gitcongif="code ~/.gitconfig"
-alias ws="open -a 'Windsurf - Next' ."
+alias ws="open -a 'Devin' ."
+# alias ws="open -a 'Windsurf - Next' ."
 
 export MONGO_PATH=/usr/local/mongodb
 export PATH=$PATH:$MONGO_PATH/bin
@@ -239,6 +240,10 @@ function npm-bower-install() {
   npm set progress=true
 }
 
+if [ -z "$SSH_AUTH_SOCK" ]; then
+   eval "$(ssh-agent -s)"
+fi
+
 # export PATH="$PATH:$HOME/.rv/bin" # Add RVM to PATH for scripting
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$PATH:$HOME/.yarn/bin"
@@ -269,20 +274,20 @@ export GPG_TTY=$(tty)
 . "$HOME/.local/bin/env"
 
 # Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/kiwi/.lmstudio/bin"
+export PATH="$PATH:$HOME/.lmstudio/bin"
 
 # Added by Windsurf - Next
-export PATH="/Users/kiwi/.codeium/windsurf/bin:$PATH"
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/kiwi/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kiwi/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$HOME/Downloads/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Downloads/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/kiwi/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kiwi/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc"; fi
 
 # bun completions
-[ -s "/Users/kiwi/.bun/_bun" ] && source "/Users/kiwi/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -293,10 +298,9 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:$HOME/go/bin"
 
 source <(gt completion zsh)
-export GOOGLE_APPLICATION_CREDENTIALS="/Users/kiwi/code/roamly-frontend/gcp-credentials.json"
 
 # --- Gas Town Integration (managed by gt) ---
-[[ -f "/Users/kiwi/.config/gastown/shell-hook.sh" ]] && source "/Users/kiwi/.config/gastown/shell-hook.sh"
+[[ -f "$HOME/.config/gastown/shell-hook.sh" ]] && source "$HOME/.config/gastown/shell-hook.sh"
 # --- End Gas Town ---
 # mise activation
 if command -v mise &> /dev/null; then

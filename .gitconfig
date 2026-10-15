@@ -3,11 +3,11 @@
 	name = Dave Laird
 	useConfigOnly = true
 	email = kiwiupover@gmail.com
-  signingkey = kiwiupover@gmail.com
+	signingkey = BF1066315A2829D8
 [commit]
-  gpgsign = true
+	gpgsign = true
 [tag]
-  gpgsign = true
+	gpgSign = true
 [branch]
   autosetuprebase = always
 [color]
@@ -86,5 +86,3 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
-[url "https://github.com/"]
-	insteadOf = git@github.com:
