@@ -1,4 +1,3 @@
-a
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the start of this file.
 [ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
@@ -32,6 +31,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
+
+# muse theme prompt without the red [exit code] segment
+PROMPT="${FG[117]}%~%{$reset_color%}\$(git_prompt_info)\$(virtualenv_prompt_info)${FG[133]}\$(git_prompt_status) ${FG[077]}ᐅ%{$reset_color%} "
 
 # using http://direnv.net/ for multiple git users
 # brew install direnv
@@ -271,7 +273,7 @@ export VOLTA_FEATURE_PNPM=1
 # GPG
 export GPG_TTY=$(tty)
 
-. "$HOME/.local/bin/env"
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:$HOME/.lmstudio/bin"
@@ -297,7 +299,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:$HOME/go/bin"
 
-source <(gt completion zsh)
+command -v gt >/dev/null && source <(gt completion zsh)
 
 # --- Gas Town Integration (managed by gt) ---
 [[ -f "$HOME/.config/gastown/shell-hook.sh" ]] && source "$HOME/.config/gastown/shell-hook.sh"

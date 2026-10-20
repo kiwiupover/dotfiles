@@ -22,8 +22,12 @@ window-save-state = always
 
 maximize = true
 
-keybind = super+t=unbind
-keybind = super+w=unbind
+keybind = super+t=text:\x02c
+keybind = super+w=text:\x02X
+keybind = super+arrow_left=text:\x02p
+keybind = super+arrow_right=text:\x02n
+keybind = super+arrow_up=text:\x02[
+keybind = super+arrow_down=text:\x02]
 
 
 # This is the configuration file for Ghostty.
@@ -73,3 +77,4 @@ keybind = super+w=unbind
 # # which is explained in the docs for that config option.
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
+keybind = super+shift+w=text:\x02D

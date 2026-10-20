@@ -3,6 +3,12 @@ onboarding = false
 [keys]
 new_tab = ["prefix+c", "cmd+t"]
 close_tab = ""
+previous_tab = ["prefix+p", "cmd+left"]
+next_tab = ["prefix+n", "cmd+right"]
+previous_workspace = ["prefix+[", "cmd+up"]
+next_workspace = ["prefix+]", "cmd+down"]
+clear_pane = "cmd+k"
+close_workspace = ["prefix+shift+d", "cmd+shift+w"]
 
 [[keys.command]]
 key = "prefix+shift+x"
@@ -22,3 +28,6 @@ status_indicators = "dots"
 [theme]
 name = "catppuccin"
 auto_switch = false
+
+[theme.custom]
+accent = "#f38ba8"

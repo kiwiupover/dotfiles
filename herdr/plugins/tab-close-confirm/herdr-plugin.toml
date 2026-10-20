@@ -17,5 +17,5 @@ id = "confirm"
 title = "Close tab?"
 placement = "popup"
 width = "60%"
-height = 14
+height = 8
 command = ["node", "scripts/confirm.js"]
