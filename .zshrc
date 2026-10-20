@@ -164,7 +164,7 @@ alias bt='broccoli-taco'
 alias bts='broccoli-taco serve'
 alias btbp='BROCCOLI_TACO_ENV=production broccoli-taco build dist'
 
-alias bower='noglob bower'
+alias cc='claude --dangerously-skip-permissions'
 
 alias ls="ls -pal"
 alias ..="cd ../ && ls -al"
