@@ -1,0 +1,29 @@
+.gitconfig
+  s_7f62892960a130::t_b36a7c8807d8c7 89-91
+.zshrc
+  s_202ca88f714632::t_c008b835a021f5 316-321
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2ee4ba14b5fa695ff5877583937097227571d3e8",
+  "prompts": {},
+  "sessions": {
+    "s_202ca88f714632": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "760b812c-e5e2-4c88-b668-826f56a7c49f",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Dave Laird <kiwiupover@gmail.com>"
+    },
+    "s_7f62892960a130": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e34ef4aa-7094-4abb-8a12-261b8c41364a",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Dave Laird <kiwiupover@gmail.com>"
+    }
+  }
+}
