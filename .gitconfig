@@ -86,3 +86,6 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
+[trace2]
+	eventTarget = af_unix:stream:/Users/kiwiupover/.git-ai/internal/daemon/trace2.sock
+	eventNesting = 0

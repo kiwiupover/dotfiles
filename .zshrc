@@ -313,3 +313,9 @@ elif [ -f ~/.local/bin/mise ]; then
     eval "$(~/.local/bin/mise activate zsh --shims)"
     eval "$(~/.local/bin/mise activate zsh)"
 fi
+
+# Added by git-ai installer on Fri Oct 23 08:31:10 2026
+export PATH="/Users/kiwiupover/.git-ai/bin:$PATH"
+
+# cubic
+export PATH="/Users/kiwiupover/.cubic/bin":$PATH
