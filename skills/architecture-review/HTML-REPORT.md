@@ -2,7 +2,7 @@
 
 Used by `architecture-review` and `architecture-plan` when the user asks for a visual. Write the report to `<tmpdir>/architecture-review-<timestamp>.html` (or `architecture-plan-<timestamp>.html`), where `<tmpdir>` is `$TMPDIR`, falling back to `/tmp`, so nothing lands in the repo. Open it with `open <path>` and give the user the absolute path.
 
-The report is rendered as a single self-contained HTML file in the OS temp directory. Tailwind and Mermaid both come from CDNs. Mermaid handles graph-shaped diagrams reliably; hand-built divs and inline SVG handle the more editorial visuals (mass diagrams, cross-sections). Mix the two: don't lean on Mermaid for everything, it'll start to look generic.
+The report is rendered as a single self-contained HTML file in the OS temp directory. Tailwind and Mermaid both come from CDNs. Mermaid handles graph-shaped diagrams reliably; hand-built divs and inline SVG handle the more editorial visuals (mass diagrams, cross-sections).
 
 ## Scaffold
 
@@ -37,11 +37,11 @@ The report is rendered as a single self-contained HTML file in the OS temp direc
 
 ## Header
 
-Repo, branch or plan name, date, and a compact legend: solid box = module, dashed line = seam, red arrow = leakage, thick dark box = deep module. No introduction paragraph. Straight into the findings.
+Repo, branch or plan name, date, and a compact legend: solid box = module, dashed line = seam, red arrow = leakage, thick dark box = deep module. Findings follow the legend directly.
 
 ## Finding card
 
-The diagrams carry the weight. Prose is sparse, plain, and uses the glossary terms (from the `/codebase-design` skill) without ceremony.
+The diagrams carry the weight. Prose is sparse and uses the `codebase-design` vocabulary from DESIGN-PASS.md.
 
 Each design finding from the review is one `<article>`, ordered by severity:
 
@@ -55,11 +55,11 @@ Each design finding from the review is one `<article>`, ordered by severity:
 - **Wins**: bullets, ≤6 words each. e.g. "Tests hit one interface", "Pricing logic stops leaking", "Delete 4 shallow wrappers".
 - **ADR callout** (if applicable): one line in an amber-tinted box.
 
-No paragraphs of explanation. If the diagram needs a paragraph to be understood, redraw the diagram.
+Each field is one sentence or less. If the diagram needs a paragraph to be understood, redraw the diagram.
 
 ## Diagram patterns
 
-Pick the pattern that fits the finding. Mix them. Don't make every diagram look the same. Variety is part of the point.
+Pick the pattern that fits each finding, and vary patterns across the report so each diagram reads as its own argument.
 
 ### Mermaid graph (the workhorse for dependencies / call flow)
 
@@ -108,11 +108,7 @@ One larger card: the finding to tackle first, one sentence on why, and an anchor
 
 ## Tone
 
-Plain English, concise, but the architectural nouns and verbs come straight from the `/codebase-design` skill. Concision is not an excuse to drift.
-
-**Use exactly:** module, interface, implementation, depth, deep, shallow, seam, adapter, leverage, locality.
-
-**Never substitute:** component, service, unit (for module) · API, signature (for interface) · boundary (for seam) · layer, wrapper (for module, when you mean module).
+Use the `codebase-design` vocabulary exactly, as DESIGN-PASS.md lists it. When a term isn't in that glossary, reach for one that is before inventing one.
 
 **Phrasings that fit the style:**
 
@@ -121,6 +117,6 @@ Plain English, concise, but the architectural nouns and verbs come straight from
 - "Deepen: one interface, one place to test."
 - "Two adapters justify the seam: HTTP in prod, in-memory in tests."
 
-**Wins bullets** name the gain in glossary terms: *"locality: bugs concentrate in one module"*, *"leverage: one interface, N call sites"*, *"interface shrinks; implementation absorbs the wrappers"*. Don't write *"easier to maintain"* or *"cleaner code"*, because those terms aren't in the glossary and don't earn their place.
+**Wins bullets** name the gain in glossary terms: *"locality: bugs concentrate in one module"*, *"leverage: one interface, N call sites"*, *"interface shrinks; implementation absorbs the wrappers"*.
 
-No hedging, no throat-clearing, no "it's worth noting that…". If a sentence could be a bullet, make it a bullet. If a bullet could be cut, cut it. If a term isn't in the `/codebase-design` glossary, reach for one that is before inventing a new one.
+State each point directly. If a sentence could be a bullet, make it a bullet. If a bullet could be cut, cut it.

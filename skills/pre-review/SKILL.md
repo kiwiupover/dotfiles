@@ -1,10 +1,10 @@
 ---
 name: pre-review
-description: Trigger this when the user says 'pre-review', 'self-review' or 'check for over-engineering'.
+description: Pre-review a diff for YAGNI before a human sees it — unused options, parallel code paths, duplicated state, swallowed failures, destructive defaults, unverified docs claims. Use to pre-review or self-review a branch or PR, or to check for over-engineering.
 ---
 
 <objective>
-Catch the problems reviewers flag in "code quality" comments: things that work but shouldn't exist. This is not an idiom or style review; it asks whether each addition earns its place. It applies to app code, shell scripts, config files, and docs.
+Catch the YAGNI that reviewers flag in "code quality" comments: additions that work but haven't earned their place yet. Every check asks one question of each addition: is it needed today? It applies to app code, shell scripts, config files, and docs.
 </objective>
 
 <workflow>
@@ -13,10 +13,10 @@ Catch the problems reviewers flag in "code quality" comments: things that work b
    - A PR by number: `gh pr diff <n>`. Read full files with `git fetch origin pull/<n>/head:refs/pre/<n>` and `git show refs/pre/<n>:<path>`, without changing the current branch.
    - A stack: fetch every PR in the stack the same way. Review one PR's diff, but answer "is this used?" against the top of the stack.
 2. For large diffs, read the source in full and read tests only to see what machinery they cover.
-3. Answer each check below from the diff.
+3. Answer every check below against the diff. The step is done when each check has hits or an explicit "none".
 4. Confirm every hit before reporting it. Open the file at the line you cite. For "unused", "never read", "no caller", or "always passed X", search callers across backend and web at the top of the stack, and say if only tests use it. Drop any hit you can't confirm, or mark it inferred.
 5. For each fix, check what it breaks: tests that assert the behavior, and later PRs in the stack that use the thing. If a later PR uses it, the fix is "move it to that PR", not "delete it".
-6. Report only. Do not apply fixes unless asked; some fixes change behavior and need a decision.
+6. Report only, and leave the code as it is until the user picks fixes: some fixes change behavior and need a decision.
 </workflow>
 
 <checks>
@@ -67,7 +67,7 @@ For stacked PRs: is everything added here used by the end of the stack? Does a l
 
 <output>
 List hits by how much code the fix removes, largest first. For each hit: the check name, `file:line`, one sentence on what is redundant or unsafe, the smallest fix, whether it was confirmed or inferred, whether the fix changes behavior (needs a decision), and what the fix breaks (tests, later PRs).
-If you notice a correctness bug, list it separately under "Possible bugs". Don't drop it because it's out of scope.
+List any correctness bug you notice separately under "Possible bugs", even though it's outside these checks.
 If nothing hits, say so plainly.
 End with the single decision that would remove the most code, if there is one.
 

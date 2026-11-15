@@ -1,6 +1,6 @@
 ---
 name: polish
-description: Trigger this when the user says 'polish', 'review the code' or 'clean up the code'.
+description: Use this skill when the user say 'polish' or 'clean up the branch'
 compatibility: Requires git.
 ---
 
@@ -8,11 +8,13 @@ compatibility: Requires git.
 
 Evaluate the branch against what a careful senior engineer would merge: correct, idiomatic to this codebase, as simple as possible, and safe.
 
+`architecture-review` runs this skill's steps with a design pass added, so this file is the single source for the shared passes.
+
 ## Choose the mode
 
 Follow the user's requested action, including when another skill invokes this one:
 
-- **Review:** a request to review, audit, assess, or check the branch, including `$polish review`. Leave the user's checkout untouched: no edits, dependency installs, or formatting; run anything that writes files in a disposable location outside it. Every pass below yields findings and suggested fixes, not applied changes.
+- **Review:** a request to review, audit, assess, or check the branch, including `$polish review`. Keep the user's checkout exactly as you found it: run anything that writes files (installs, formatters, builds) in a disposable copy outside it. Every pass yields findings and suggested fixes.
 - **Edit:** a request to polish, clean up, or fix the branch, including `$polish the current branch` or an unqualified `$polish`. Apply task-scoped fixes, leave them uncommitted unless the user asked for a commit, and return the improved branch with a summary.
 
 An explicit read-only constraint wins. Otherwise, a request to apply fixes selects edit mode even when it also asks for a review.
@@ -22,7 +24,7 @@ An explicit read-only constraint wins. Otherwise, a request to apply fixes selec
 1. **Find the change.** Use the caller-supplied baseline and change scope when provided. Otherwise diff the branch against its base (`origin/HEAD`, else `main`), including uncommitted work; on the base branch itself, review the uncommitted work. Nothing to review: say so and stop.
 2. **Learn its intent** from commit messages, the user's words, and the docs and tests it touches.
 3. **Inspect changed behavior** and relevant callers, tests, and configuration.
-4. **Challenge the approach early.** Is there a materially simpler or safer way to achieve the same intended outcome—not merely a cleaner version of this implementation? Look for a different data model, ownership boundary, or existing capability that eliminates whole concepts, branches, or layers. Require a concrete alternative grounded in the codebase's behavior and constraints, weighed against its tradeoffs and rewrite cost; speculative alternatives and stylistic preferences do not qualify.
+4. **Challenge the approach early.** Look for a materially simpler or safer way to the same outcome: a different data model, ownership boundary, or existing capability that eliminates whole concepts, branches, or layers. The step is done when you have named one concrete alternative grounded in the codebase and weighed it against its tradeoffs and rewrite cost, or stated "none found" with what you checked. Stylistic preferences don't count as alternatives.
    - **Review mode:** whenever the evidence establishes a superior approach, here or later, stop reviewing and return it for the user's decision: the current design problem with file/line evidence, a sketch of the alternative, why it is better, and what it would cost. Include material findings already confirmed, list skipped checks, and mark the review **incomplete**.
 5. **Triage risk.** Logic, data shapes, migrations, auth, concurrency, and external integrations deserve more attention than cleanup and formatting.
 6. **Establish a verification baseline** with checks appropriate to the change's risk, recording inherited failures separately.
@@ -52,13 +54,13 @@ Resolve implementation details autonomously. When code, tests, and docs cannot s
 The new code should look like it grew out of this codebase.
 
 - Search the repo for code that does similar things. AI-written code routinely reimplements existing helpers (query builders, validation, sorting, logging, config access); reuse them and delete the duplicates.
-- Run `library-search` when a replacement could materially reduce complexity or risk and the choice is not already clear. Pass the current scope and evidence. Adopt only suitable already-installed dependencies; ask before adding a new one unless that specific addition is already authorized.
-- Match surrounding naming, error handling, module layout, config and secret access, logging, and test structure, plus anything README or CONTRIBUTING documents. A strange-looking pattern that recurs is probably deliberate; verify before "fixing" it.
+- When a library could materially reduce complexity or risk and the choice is not already clear, follow `~/code/skills/library-search/SKILL.md` with the current scope and evidence. Adopt only suitable already-installed dependencies; ask before adding a new one unless that specific addition is already authorized.
+- Match surrounding naming, error handling, module layout, config and secret access, logging, and test structure, plus anything AGENTS.md, README, or CONTRIBUTING documents. A strange-looking pattern that recurs is probably deliberate; verify it before changing it.
 - Verify changed, unfamiliar, or version-sensitive library calls against the installed version's documentation.
 
 ### 3. Simplicity
 
-Ask of each piece: would a careful engineer have written this, or is it scaffolding the generator left behind? Start with the data model: each fact lives in exactly one place, and everything else is derived from it. Remove:
+Apply YAGNI to each piece: would a careful engineer have written this today, or is it scaffolding the generator left behind? Start with the data model: each fact lives in exactly one place, and everything else is derived from it. Remove:
 
 - Redundant state: fields, flags, columns, caches, or copies that duplicate other state or can be derived from it, including parallel flags that encode one status. Derive the value where it is read; each piece of state removed retires the code that keeps it in sync and the bugs when it drifts.
 - Speculative abstraction: patterns wrapping trivial logic, one-caller classes with no state worth managing, layers that only forward, helpers that rename without simplifying.
@@ -66,6 +68,8 @@ Ask of each piece: would a careful engineer have written this, or is it scaffold
 - Branches for cases that cannot happen, especially beside real edge cases left unhandled.
 - Tests that restate the implementation or framework, or cover behavior that no longer exists.
 - Comments that narrate the code or claim an intention the code doesn't satisfy.
+
+Then match the diff against the smell baseline in `~/.claude/skills/architecture-review/SMELLS.md`.
 
 When a meaningfully simpler design solves the same problem and the rewrite is small and safe, rewrite. Simplifying exposes bugs; passes 1 and 3 feed each other.
 
@@ -75,7 +79,7 @@ The opposite check. When the change near-duplicates existing logic or adds a thi
 
 ### 5. Double check
 
-A final sweep of the changed code for real risks, pragmatic but never negligent:
+A final sweep of the changed code for real risks:
 
 - Injection into SQL, shell, paths, or HTML; hardcoded secrets; missing validation at trust boundaries; authn/authz gaps on new endpoints.
 - Credentials or PII in logs; data kept or exposed in ways users would not expect.
@@ -84,11 +88,11 @@ A final sweep of the changed code for real risks, pragmatic but never negligent:
 - Failures that would be undiagnosable in production.
 - N+1 queries or I/O in loops, unbounded scans or in-memory growth, blocking work on hot paths, missing pagination where the codebase paginates.
 
-## Iterate until reasonably good
+## Iterate
 
-In edit mode, re-review fixes and affected interactions; repeat the whole review when the scope or risk warrants it. Continue until no material in-scope issues remain or a genuine blocker prevents completion. If fixes keep exposing significant issues, reassess the approach rather than patching indefinitely.
+In edit mode, re-run the passes on your fixes and the code they touch. You're done when a full re-run produces no new material in-scope finding, or a genuine blocker stops you. If fixes keep exposing significant issues, reassess the approach instead of patching.
 
-Scope: stay within the requested change. Note pre-existing issues elsewhere in the summary rather than fixing them, and keep the feature at the size that was asked for.
+Scope: stay within the requested change. Note pre-existing issues elsewhere in the summary, and keep the feature at the size that was asked for.
 
 ## Verify and hand back
 
