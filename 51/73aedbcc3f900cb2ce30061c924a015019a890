@@ -1,0 +1,21 @@
+AGENTS.md
+  s_4742cac497c7d3::t_9a9021021a80d2 1-25
+CLAUDE.md
+  s_4742cac497c7d3::t_b2f85fddc962b8 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "5173aedbcc3f900cb2ce30061c924a015019a890",
+  "prompts": {},
+  "sessions": {
+    "s_4742cac497c7d3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "da19af35-27bb-4a94-82b6-64658cf3aa7b",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": null
+    }
+  }
+}
