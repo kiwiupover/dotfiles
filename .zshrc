@@ -38,6 +38,9 @@ PROMPT="${FG[117]}%~%{$reset_color%}\$(git_prompt_info)\$(virtualenv_prompt_info
 # using http://direnv.net/ for multiple git users
 # brew install direnv
 eval "$(direnv hook zsh)"
+# The hook only fires before a prompt, so `zsh -ic "claude"` (herdr/Orca agent
+# tabs) would skip .envrc. Load it once at startup too.
+eval "$(direnv export zsh 2>/dev/null)"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -64,8 +67,15 @@ eval "$(direnv hook zsh)"
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias gitcongif="code ~/.gitconfig"
-alias ws="open -a 'Devin' ."
-# alias ws="open -a 'Windsurf - Next' ."
+# Open in Devin - Next if installed, otherwise Devin
+unalias ws 2>/dev/null
+ws() {
+  if [ -d "/Applications/Devin - Next.app" ] || [ -d "$HOME/Applications/Devin - Next.app" ]; then
+    open -a 'Devin - Next' "${1:-.}"
+  else
+    open -a 'Devin' "${1:-.}"
+  fi
+}
 
 export MONGO_PATH=/usr/local/mongodb
 export PATH=$PATH:$MONGO_PATH/bin
@@ -164,7 +174,7 @@ alias bt='broccoli-taco'
 alias bts='broccoli-taco serve'
 alias btbp='BROCCOLI_TACO_ENV=production broccoli-taco build dist'
 
-alias bower='noglob bower'
+alias cc='claude --dangerously-skip-permissions'
 
 alias ls="ls -pal"
 alias ..="cd ../ && ls -al"
@@ -250,13 +260,9 @@ fi
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$PATH:$HOME/.yarn/bin"
 export PATH="$PATH:$HOME/.webdriver"
-export PATH="$PATH:$HOME/.volta"
 export PATH="/usr/local/opt/node@10/bin:$PATH"
 
-export VOLTA_HOME="$HOME/.volta"
-[ -s "$VOLTA_HOME/load.sh" ] && . "$VOLTA_HOME/load.sh"
 
-export PATH="$VOLTA_HOME/bin:$PATH"
 
 export PATH=~/.asdf/shims:$PATH
 export PATH="$HOME/.bun/bin:$PATH"
@@ -266,17 +272,11 @@ export PATH="$HOME/.bun/bin:$PATH"
 [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
 #### END FIG ENV VARIABLES ####
 
-# pnpm
-export VOLTA_FEATURE_PNPM=1
-# pnpm end
 
 # GPG
 export GPG_TTY=$(tty)
 
 [ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:$HOME/.lmstudio/bin"
 
 # Added by Windsurf - Next
 export PATH="$HOME/.codeium/windsurf/bin:$PATH"
@@ -319,3 +319,37 @@ export PATH="/Users/kiwiupover/.git-ai/bin:$PATH"
 
 # cubic
 export PATH="/Users/kiwiupover/.cubic/bin":$PATH
+
+# Added by git-ai installer on Tue Oct 27 11:51:28 2026
+export PATH="/Users/kiwi/.git-ai/bin:$PATH"
+
+# cubic
+export PATH="/Users/kiwi/.cubic/bin":$PATH
+
+# Local, untracked settings (see .env.example)
+[[ -f ~/dotfiles/.env ]] && { set -a; source ~/dotfiles/.env; set +a; }
+
+# ngrok-backend [port]: tunnel to this project's backend.
+# No port given: reads MY_BACKEND port (and MY_NGROK_URL) from the nearest backend/.env.
+ngrok-backend() {
+  local dir=$PWD
+  while [[ $dir != / && ! -f $dir/backend/.env ]]; do dir=${dir:h}; done
+  local env=$dir/backend/.env
+
+  local port=$1
+  if [[ -z $port ]]; then
+    [[ -f $env ]] || { echo "No backend/.env found above $PWD. Pass a port: ngrok-backend 8060" >&2; return 1; }
+    port=$(sed -n 's/^MY_BACKEND=[^#]*:\([0-9][0-9]*\).*/\1/p' "$env" | tail -1)
+    [[ -n $port ]] || { echo "No MY_BACKEND port in $env" >&2; return 1; }
+  fi
+
+  local url=$(sed -n 's/^MY_NGROK_URL=\([^ #]*\).*/\1/p' "$env" 2>/dev/null | tail -1)
+  url=${url:-$NGROK_URL}
+  local ip=$(ipconfig getifaddr en0)
+
+  echo "${${dir:t}:-no project}: ${url:-your ngrok dev domain} -> https://$ip:$port"
+  ngrok http "https://$ip:$port" ${url:+--url=$url}
+}
+
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin"

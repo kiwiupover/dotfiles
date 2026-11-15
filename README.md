@@ -105,6 +105,18 @@ Then:
 - Restart any app whose config changed, or for herdr run `herdr server reload-config`.
 - Once you're happy, delete old backups in `~/.dotfiles-backup/`.
 
+## Git
+
+`.gitconfig` signs every commit (`commit.gpgsign = true`) but names no key: each Mac has its own. It includes `~/.gitconfig.local`, which isn't tracked, for anything specific to one machine.
+
+On a new Mac, find the key and set it there:
+```sh
+gpg --list-secret-keys --keyid-format long
+git config --file ~/.gitconfig.local user.signingkey <key id>
+```
+
+Add the key to GitHub so its commits show as verified: copy it with `gpg --armor --export <key id> | pbcopy`, then GitHub → Settings → SSH and GPG keys → New GPG key. After extending a key's expiry, delete it on GitHub and add it again.
+
 ## herdr
 
 Tracked in `herdr/`:

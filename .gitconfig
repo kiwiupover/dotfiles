@@ -3,7 +3,6 @@
 	name = Dave Laird
 	useConfigOnly = true
 	email = kiwiupover@gmail.com
-	signingkey = BF1066315A2829D8
 [commit]
 	gpgsign = true
 [tag]
@@ -86,6 +85,8 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
+[include]
+	path = ~/.gitconfig.local
 [trace2]
-	eventTarget = af_unix:stream:/Users/kiwiupover/.git-ai/internal/daemon/trace2.sock
+	eventTarget = af_unix:stream:/Users/kiwi/.git-ai/internal/daemon/trace2.sock
 	eventNesting = 0

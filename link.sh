@@ -64,6 +64,8 @@ link skills/handoff                   "$HOME/.claude/skills/handoff"
 link skills/unslop                    "$HOME/.claude/skills/unslop"
 link skills/review-code               "$HOME/.claude/skills/review-code"
 link skills/python-code-review        "$HOME/.claude/skills/python-code-review"
+link skills/writing-for-agents        "$HOME/.claude/skills/writing-for-agents"
+link skills/codebase-design           "$HOME/.claude/skills/codebase-design"
 link claude/commands/review-code.md   "$HOME/.claude/commands/review-code.md"
 
 # Codex skills

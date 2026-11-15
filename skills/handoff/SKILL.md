@@ -1,6 +1,6 @@
 ---
 name: handoff
-description: Write or resume a HANDOFF.md so work survives a context reset. Use when the user says context is filling up, asks for a handoff, wants to start a clean session, says "before I /clear", "write this down so we can continue", or when a fresh session should pick up prior work. Also use at the start of a session when a HANDOFF.md exists and the user says "continue".
+description: Write a HANDOFF.md so work survives a context reset, or resume from one.
 disable-model-invocation: true
 ---
 
@@ -19,7 +19,7 @@ If ambiguous: a `HANDOFF.md` already exists and the user said "continue" means R
 
 ### Gather before writing
 
-Do not write from memory of the conversation alone. Memory is exactly what's about to be lost, and it's the least reliable input. Ground the handoff in the repo:
+Ground the handoff in the repo, with conversation memory as the last source: memory is exactly what's about to be lost, and it's the least reliable input. The step is done when every claim you will write has been checked against the repo:
 
 ```
 git status --short
@@ -32,77 +32,7 @@ Read any file you're about to describe as "in progress." Verify claims before ma
 
 ### Write HANDOFF.md
 
-Put it at the repo root unless the project has a `docs/` or `notes/` convention. Use this structure:
-
-```markdown
-# Handoff: <short task name>
-_Last updated: <date> · Branch: <branch> · Last commit: <sha> <subject>_
-
-## Where to work
-Exact directory and branch. If sibling clones, worktrees, or other agent
-sessions exist, say which paths and ports belong to them and must be left
-alone, and what is unsafe there (e.g. "never `git stash` in <path>, another
-session's uncommitted work is in it").
-
-## Goal
-One paragraph. What are we ultimately trying to accomplish, and why.
-Include the acceptance condition, how we'll know it's done.
-Link the tracking issue and the plan/ADR docs by path or number.
-
-## State
-Working tree: clean | N files modified (list them)
-Build: passing | failing (<error>)
-Tests: <command> → passing | N failing (<which>)
-
-## Done
-- [x] Thing, with the file path where it lives
-- [x] Thing, with the file path where it lives
-
-## In progress
-The one thing that is half-finished. Exactly where it stopped:
-file, function, and what the next edit needs to be.
-If nothing is half-finished, write "Nothing in flight, clean stopping point."
-
-## Next
-1. Concrete action, with file path
-2. Concrete action, with file path
-3. Concrete action, with file path
-
-## Key files
-| Path | Why it matters |
-|------|----------------|
-| `src/foo.ts` | Entry point for X; the retry logic lives here |
-
-## Decisions
-- **Chose X over Y** because Z. Revisit only if <condition>.
-
-## Dead ends
-- **Tried A.** Failed because B. Do not retry.
-
-## Blockers outside code
-Human gates: sign-offs, legal, accounting, provisioning, anyone a task is
-assigned to and since when. If the real critical path is not code, say so
-here in those words.
-
-## Local setup
-Services the work needs and how to start each one: containers, ports, env
-vars, exact commands. Note which ports/services belong to other sessions.
-Include version-manager traps ("plain `mix` silently uses the wrong Elixir,
-run `mise exec -- mix`").
-
-## Gotchas
-Environment quirks, flaky tests, slow commands, things that look broken but aren't.
-
-## Verify
-```bash
-<build command>
-<test command>
-<lint command>
-```
-
-## Open questions for the user
-- Question that needs a human answer before proceeding
-```
+Put it at the repo root unless the project has a `docs/` or `notes/` convention. Follow the structure in [TEMPLATE.md](TEMPLATE.md).
 
 ### Rules for the content
 
@@ -110,9 +40,9 @@ Environment quirks, flaky tests, slow commands, things that look broken but aren
 
 **Dead ends are the highest-value section.** They're what a fresh session cannot reconstruct and will otherwise repeat. Record every approach tried and abandoned, with the reason.
 
-**Write for a reader with zero memory.** No "as we discussed," no "the file from earlier," no pronouns without antecedents. Every reference is a path.
+**Write for a cold reader.** The next session has none of this conversation. Every reference is a path, every pronoun has its noun in the same sentence.
 
-**Don't dump code.** Point at files and line ranges. The next session can read them; it can't read your reasoning.
+**Point at code by path and line range.** The next session can read the files; what it can't read is your reasoning, so spend the words there.
 
 **Distinguish verified from assumed.** Mark anything you believe but didn't check: `(unverified)`.
 
@@ -148,5 +78,5 @@ Tell the user the file path and give them the resume line to paste into the clea
 4. If reality contradicts the handoff, say so plainly before doing anything else, and ask how to proceed.
 5. Read the files in `## Key files` before editing anything.
 6. If `## Open questions` is non-empty, ask them now.
-7. Start at step 1 of `## Next`. Do not re-litigate anything under `## Decisions` or retry anything under `## Dead ends`.
+7. Start at step 1 of `## Next`. Treat `## Decisions` as settled and `## Dead ends` as closed.
 8. Keep `HANDOFF.md` current as you work. Update `## Done`, `## In progress`, and `## Next` at each meaningful checkpoint, not only at the end. The next reset may not be planned.
