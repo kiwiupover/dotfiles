@@ -85,8 +85,8 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
-[trace2]
-	eventTarget = af_unix:stream:/Users/kiwiupover/.git-ai/internal/daemon/trace2.sock
-	eventNesting = 0
 [include]
 	path = ~/.gitconfig.local
+[trace2]
+	eventTarget = af_unix:stream:/Users/kiwi/.git-ai/internal/daemon/trace2.sock
+	eventNesting = 0

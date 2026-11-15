@@ -5,3 +5,5 @@
 .atom/blob-store
 .atom/compile-cache
 .atom/storage
+.env
+*.local.md

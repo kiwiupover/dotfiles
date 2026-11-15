@@ -124,5 +124,7 @@
   "svelte.enable-ts-plugin": true,
   "editor.codeActions.triggerOnFocusChange": true,
   "github.copilot.nextEditSuggestions.enabled": true,
-  "baml.bamlPanelOpen": false
+  "baml.bamlPanelOpen": false,
+  "chat.useHooks": true,
+  "github.copilot.chat.otel.dbSpanExporter.enabled": true
 }

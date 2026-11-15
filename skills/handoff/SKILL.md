@@ -1,6 +1,6 @@
 ---
 name: handoff
-description: Write or resume a HANDOFF.md so work survives a context reset. Use when the user says context is filling up, asks for a handoff, wants to start a clean session, says "before I /clear", "write this down so we can continue", or when a fresh session should pick up prior work. Also use at the start of a session when a HANDOFF.md exists and the user says "continue".
+description: Trigger this when the user says 'handoff', 'write a handoff', 'create a handoff' or 'create a handoff.md'.
 disable-model-invocation: true
 ---
 

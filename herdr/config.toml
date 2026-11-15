@@ -22,6 +22,12 @@ type = "shell"
 command = "herdr plugin action invoke close-tab --plugin tab-close-confirm"
 description = "close tab (confirm)"
 
+[[keys.command]]
+key = "ctrl+shift+o"
+type = "shell"
+command = "open -a 'Devin - Next' \"$(herdr pane current | /opt/homebrew/bin/jq -r '.result.pane.foreground_cwd // .result.pane.cwd')\""
+description = "open pane folder in Devin"
+
 [ui]
 status_indicators = "dots"
 

@@ -10,7 +10,7 @@ id = "close-tab"
 title = "Close tab"
 description = "Ask for confirmation before closing the active tab."
 contexts = ["workspace", "tab", "pane"]
-command = ["node", "scripts/close-tab.js"]
+command = ["/opt/homebrew/bin/node", "scripts/close-tab.js"]
 
 [[panes]]
 id = "confirm"
@@ -18,4 +18,4 @@ title = "Close tab?"
 placement = "popup"
 width = "60%"
 height = 8
-command = ["node", "scripts/confirm.js"]
+command = ["/opt/homebrew/bin/node", "scripts/confirm.js"]
