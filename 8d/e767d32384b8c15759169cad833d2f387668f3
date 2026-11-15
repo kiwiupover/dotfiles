@@ -1,0 +1,21 @@
+.gitignore
+  s_d0c3707a9b74c6::t_eb778166bef214 8-13
+README.md
+  s_d0c3707a9b74c6::t_a479505b8a7891 15,24,29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8de767d32384b8c15759169cad833d2f387668f3",
+  "prompts": {},
+  "sessions": {
+    "s_d0c3707a9b74c6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b78f43e0-521a-4290-b128-afe2b6c0460e",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Dave Laird <kiwiupover@gmail.com>"
+    }
+  }
+}
