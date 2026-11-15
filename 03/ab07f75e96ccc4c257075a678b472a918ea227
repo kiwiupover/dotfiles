@@ -1,0 +1,19 @@
+link.sh
+  s_46a846db7df133::t_e03264f430c806 69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "03ab07f75e96ccc4c257075a678b472a918ea227",
+  "prompts": {},
+  "sessions": {
+    "s_46a846db7df133": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1e0ff-0c1c-7200-865f-d4a0a985bfce",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Dave Laird <kiwiupover@gmail.com>"
+    }
+  }
+}
