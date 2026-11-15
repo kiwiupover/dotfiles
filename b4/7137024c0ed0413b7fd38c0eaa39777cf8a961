@@ -1,0 +1,138 @@
+.gitignore
+  s_34ab1ee3adea53::t_15761d50de9973 8
+  s_4742cac497c7d3::t_2c2be6450fcfd1 9
+skills/daily-brief-writer/SKILL.md
+  s_2cca0bc16e0613::t_e1c5bf6e68ccd3 1-45
+skills/architecture-review/DESIGN-PASS.md
+  s_410d82a24f9b88::t_47222f60eb80d8 1-46
+herdr/config.toml
+  s_4742cac497c7d3::t_58b6402d783189 25-30
+skills/herdr-tidy/scripts/idle_tabs.py
+  s_ab63d7e40c9827::t_46bb4dd2316181 1-53
+skills/writing-for-agents/agents/openai.yaml
+  s_4742cac497c7d3::t_3e97c707cab3f9 1-3
+.env.example
+  s_34ab1ee3adea53::t_c839bb300d6760 1-4
+link.sh
+  s_4742cac497c7d3::t_3e97c707cab3f9 67
+skills/pre-review/SKILL.md
+  s_298916eadd4597::t_7a5f3687c19276 36
+  s_298916eadd4597::t_5598422f142af5 57-59
+  s_298916eadd4597::t_eee6f79665ab64 79
+  s_298916eadd4597::t_6b9c3be9d50679 37-39
+  s_298916eadd4597::t_90e770464b630d 8-10
+  s_298916eadd4597::t_cbdc07dcef038e 61-63
+  s_298916eadd4597::t_124f37c940f162 33-35
+  s_298916eadd4597::t_0da81abda37290 11-32,40-56,64-78
+  s_298916eadd4597::t_912f5f94d9e002 60
+  s_298916eadd4597::t_b2c1b646d4f0ca 5-7
+  s_4742cac497c7d3::t_a8595df27b844d 1-4
+herdr/plugins/tab-close-confirm/herdr-plugin.toml
+  s_f6fc79b12e266e::t_11bc260f8f01af 13,21
+skills/herdr-tidy/SKILL.md
+  s_0cbba68166c4dd::t_dcb91f0b7f237c 1-23
+.zshrc
+  s_ed9f63ff50d080::t_207801a1e38d01 41-43
+skills/writing-for-agents/SKILL-MECHANICS.md
+  s_4742cac497c7d3::t_3e97c707cab3f9 1-22
+skills/architecture-review/HTML-REPORT.md
+  s_a0415886060cd5::t_000ce7bfc036ea 1-126
+skills/writing-for-agents/SKILL.md
+  s_4742cac497c7d3::t_3e97c707cab3f9 1-81
+skills/architecture-plan/SKILL.md
+  s_4742cac497c7d3::t_5068f01f6cdc5f 1-74
+skills/architecture-review/SKILL.md
+  s_4742cac497c7d3::t_d118d5d3ac0496 1-119
+skills/handoff/SKILL.md
+  s_4742cac497c7d3::t_f162c7384680f3 3
+skills/polish/SKILL.md
+  s_4742cac497c7d3::t_9219f439b11f22 1-104
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b47137024c0ed0413b7fd38c0eaa39777cf8a961",
+  "prompts": {},
+  "sessions": {
+    "s_0cbba68166c4dd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "77c5cf90-82c6-4360-9d0f-b5ccc9cc15cb",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Dave Laird <kiwiupover@gmail.com>"
+    },
+    "s_298916eadd4597": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9e476319-8d4e-4f7f-94ec-69376f9a74ce",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Dave Laird <kiwiupover@gmail.com>"
+    },
+    "s_2cca0bc16e0613": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "56240780-51d2-42f5-ade6-5c2fbc7c29b7",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Dave Laird <kiwiupover@gmail.com>"
+    },
+    "s_34ab1ee3adea53": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fe393d52-244a-4b4d-a5e4-d80588d75d50",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Dave Laird <kiwiupover@gmail.com>"
+    },
+    "s_410d82a24f9b88": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1e095-2ece-7ab0-b298-55ba27b899bc",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "Dave Laird <kiwiupover@gmail.com>"
+    },
+    "s_4742cac497c7d3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "da19af35-27bb-4a94-82b6-64658cf3aa7b",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": null
+    },
+    "s_a0415886060cd5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d447958c-7bba-421e-b2a3-edc25157fe5e",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Dave Laird <kiwiupover@gmail.com>"
+    },
+    "s_ab63d7e40c9827": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1ccbbb08-2969-489c-ac14-c3530a555922",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Dave Laird <kiwiupover@gmail.com>"
+    },
+    "s_ed9f63ff50d080": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "76d61df3-767d-4804-8be8-3801bf9180bc",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Dave Laird <kiwiupover@gmail.com>"
+    },
+    "s_f6fc79b12e266e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4d009a99-275d-4438-bd89-637772a5def8",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Dave Laird <kiwiupover@gmail.com>"
+    }
+  }
+}
