@@ -1,0 +1,57 @@
+skills/polish/SKILL.md
+  s_4742cac497c7d3::t_fcf7a90b67fd68 63,72
+  s_4742cac497c7d3::t_0ee62d86fa37fd 11-12,17,27,57-58,82,91,93,95
+  s_4742cac497c7d3::t_df357635f86d8a 73
+skills/architecture-review/HTML-REPORT.md
+  s_4742cac497c7d3::t_7b07621fa6c5d6 5,40,44,58,62,111,120,122
+skills/handoff/TEMPLATE.md
+  s_4742cac497c7d3::t_a39531f29c324e 1-73
+skills/codebase-design/SKILL.md
+  s_4742cac497c7d3::t_f48ad9d84bd5ff 1-114
+skills/codebase-design/DEEPENING.md
+  s_4742cac497c7d3::t_f48ad9d84bd5ff 1-37
+skills/architecture-review/SMELLS.md
+  s_4742cac497c7d3::t_71fd5ace6d2794 1-23
+skills/architecture-review/DESIGN-PASS.md
+  s_4742cac497c7d3::t_fcf7a90b67fd68 27-28
+  s_4742cac497c7d3::t_7b07621fa6c5d6 5,9,21,32
+skills/codebase-design/DESIGN-IT-TWICE.md
+  s_4742cac497c7d3::t_f48ad9d84bd5ff 1-44
+link.sh
+  s_4742cac497c7d3::t_f48ad9d84bd5ff 68
+skills/architecture-plan/SKILL.md
+  s_4742cac497c7d3::t_c50499c151e5f8 8,10,15,26,36-39,41,43,47,56,61,70
+  s_16091bfd4b4384::t_c3c8471ed2ab0f 3
+skills/handoff/SKILL.md
+  s_4742cac497c7d3::t_a39531f29c324e 3,22,35,43,45,81
+skills/architecture-review/SKILL.md
+  s_4742cac497c7d3::t_87a5649645a795 9,11,13,15,17-19,21,23,25,27,29,31-32,34,36,38
+skills/pre-review/SKILL.md
+  s_4742cac497c7d3::t_a9e849cc510c23 3,7,16,19,70
+skills/codebase-design/agents/openai.yaml
+  s_4742cac497c7d3::t_f48ad9d84bd5ff 1-3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8e709311423896f2016f29fb2ef9f2be0b5aef7b",
+  "prompts": {},
+  "sessions": {
+    "s_16091bfd4b4384": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "10184f55-b0c5-4654-96fc-5a70a084295a",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Dave Laird <kiwiupover@gmail.com>"
+    },
+    "s_4742cac497c7d3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "da19af35-27bb-4a94-82b6-64658cf3aa7b",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Dave Laird <kiwiupover@gmail.com>"
+    }
+  }
+}
