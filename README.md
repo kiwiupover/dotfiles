@@ -12,7 +12,7 @@ Work through these in order. Everything is safe to repeat; see [Rerun](#rerun) f
 
 ### 2. Git and shell tools
 ```sh
-brew install git git-recent rbenv zsh direnv
+brew install git git-recent rbenv zsh direnv gh mise
 ```
 
 ### 3. Ohmyzsh
@@ -21,22 +21,12 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 ```
 This writes its own `~/.zshrc`. That's fine: `link.sh` (step 7) backs it up and links the one from this repo.
 
-### 4. Volta
-```sh
-curl https://get.volta.sh | bash
-```
-
-Add node dependencies ember-cli and bower and yarn
-```sh
-volta install ember-cli bower yarn
-```
-
-### 5. Pull Configs
+### 4. Pull Configs
 ```sh
 git clone git@github.com:kiwiupover/dotfiles.git ~/dotfiles
 ```
 
-### 6. Apps
+### 5. Apps
 
 #### Ghostty
 https://ghostty.org/download

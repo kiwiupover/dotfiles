@@ -5,5 +5,9 @@
 .atom/blob-store
 .atom/compile-cache
 .atom/storage
+
+# Secrets and per-machine files
 .env
+.env.*
+*.local
 *.local.md
