@@ -1,0 +1,24 @@
+AGENTS.md
+  s_4742cac497c7d3::t_9a9021021a80d2 1-25
+CLAUDE.md
+  s_4742cac497c7d3::t_b2f85fddc962b8 1
+skills/daily-brief-writer/SKILL.md
+  s_4742cac497c7d3::t_59f4e6b5c5ccca 16
+  s_4742cac497c7d3::t_f03e1ca60c5610 12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7e2cb9f19377d39ecd70c04196d4aa3be1f238cf",
+  "prompts": {},
+  "sessions": {
+    "s_4742cac497c7d3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "da19af35-27bb-4a94-82b6-64658cf3aa7b",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": null
+    }
+  }
+}
